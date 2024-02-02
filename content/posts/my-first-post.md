@@ -13,7 +13,6 @@ categories = ["流程紀錄"]
 +++
 
 自從閱讀了**卡片盒筆記法** & **打造第二大腦**，默默開始將筆記由 Notion 遷移至 Obsidian，也越來越習慣使用 Markdown 來寫筆記。
-
 在 Medium 不支援 Markdown 的情況下，興起了自己試著建一個的念頭..
 
 ## Local
@@ -75,10 +74,10 @@ git init
 git submodule add https://github.com/tomowang/hugo-theme-tailwind.git themes/tailwind
 ```
 
-- 開啟 config.toml(or hugo.toml), 更改 theme to "paper"
+- 開啟 config.toml(or hugo.toml), 更改 theme to "Tailwind"，調整其他配置
 
 ```
-theme = "paper"
+theme = "Tailwind"
 ```
 
 5. 啟動 Hugo 伺服器查看網站
@@ -97,11 +96,16 @@ hugo new content posts/my-first-post.md
 ```
 
 ```
-   +++
-   title = 'My First Post'
-   date = 2024-01-14T07:07:07+01:00
-   draft = true
-   +++
++++
+author = ""
+title = ""
+date =
+description = ""
+tags = [""]
+series = [""]
+categories = [""]
+draft = true
++++
 
 ```
 
@@ -239,7 +243,7 @@ deploy:
    ![](/images/hugo-deploy-03.png)
    ![](/images/hugo-deploy-04.png)
 
-7. 點 `commit message` 可以看到部署完成的網站，未來重新 push 變更時，GitHub 都會重新部署。
+7. 點 `commit message` 可以看到部署完成的網站，未來重新 push 變更時，GitHub 都會自動重新部署。
    ![](/images/hugo-deploy-05.png)
 
 ---
