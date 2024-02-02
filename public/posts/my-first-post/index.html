@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <title>[流程紀錄] Hugo &#43; Github Page &#43; Github Page 製作個人網站 :: SW Blog - The Memory Rescue Program</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta
+  name="description"
+  content="自從閱讀了卡片盒筆記法 &amp;amp; 打造第二大腦，默默開始將筆記由 Notion 遷移至 Obsidian，也越來越習慣使用 Markdown 來寫筆記。
+在 Medium 不支援 Markdown 的情況下，興起了自己試著建一個的念頭..
+Local 安裝 Hugo macOS | Hugo (gohugo.io) ，使用 homebrew 進行安裝 brew install hugo 創一個資料夾放置相關資料 ex. blog hugo new site &amp;lt;資料夾名稱&amp;gt; hugo new site &amp;lt;github帳號.github.io&amp;gt; #此處命名為github帳號，方便後續使用github page cd &amp;lt;資料夾名稱&amp;gt; cd &amp;lt;github帳號.github.io&amp;gt; git init Hugo 框架資料夾結構
+Directory structure | Hugo (gohugo.io) my-site/ ├── archetypes/ (放置一些md文章的模板) │ └── default.md ├── assets/ ├── config/ &amp;lt;-- site configuration │ └── _default/ │ └── hugo."
+/>
+<meta
+  name="keywords"
+  content="hugo, tailwind, tailwindcss, hugo theme, hugo theme tailwind"
+/>
+<meta name="robots" content="noodp" />
+<meta property="og:title" content="[流程紀錄] Hugo &#43; Github Page &#43; Github Page 製作個人網站" />
+<meta property="og:description" content="Hugo 是一個使用 Go 語言構建的靜態網站生成器。可將Markdown 格式編寫的內容轉換為HTML，生成一個靜態網站。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://sweiihuang.github.io/posts/my-first-post/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2024-02-02T14:15:59+08:00" />
+<meta property="article:modified_time" content="2024-02-02T14:15:59+08:00" />
+
+
+
+
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="[流程紀錄] Hugo &#43; Github Page &#43; Github Page 製作個人網站"/>
+<meta name="twitter:description" content="Hugo 是一個使用 Go 語言構建的靜態網站生成器。可將Markdown 格式編寫的內容轉換為HTML，生成一個靜態網站。"/>
+
+
+<link rel="canonical" href="https://sweiihuang.github.io/posts/my-first-post/" />
+
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="stylesheet" href="/css/index.min.984bcf5cb7baf146feef1ec41e5d6ea85666cfbbe6ec4e39ec70642e16d7581c.css">
+
+
+
+
+
+
+
+
+
+  
+</head>
+<body class="flex flex-col min-h-screen w-full bg-slate-50 dark:bg-gray-800">
+  <header class="flex flex-none justify-center z-10">
+    <div class="flex flex-row gap justify-between w-full max-w-4xl lg:max-w-5xl h-12 mt-3">
+  <div class="flex-none ml-2 md:ml-0">
+    <a href="/" class="">
+      <img class="h-12 w-12 rounded-full object-cover bg-gray-100" src="/Hello.png" alt="logo">
+    </a>
+  </div>
+  <div class="flex-1"></div>
+  <div class="flex-none">
+    
+
+
+
+<nav class="h-full static">
+  <button id="navbar-menu-toggle" type="button" class="inline-flex items-center p-2 text-sm text-slate-800 dark:text-slate-200 rounded-lg md:hidden" aria-controls="navbar-menu" aria-expanded="false">
+    <span class="sr-only">Open main menu</span>
+    <i class="w-8 h-8">
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-menu-2" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 6l16 0" />
+  <path d="M4 12l16 0" />
+  <path d="M4 18l16 0" />
+</svg>
+
+    </i>
+  </button>
+  <div class="absolute md:static top-16 left-0 right-0 z-50 hidden w-full md:block md:w-auto" id="navbar-menu">
+    <ul class="flex flex-col mx-2 md:mx-0 md:flex-row md:border-0 rounded-sm md:rounded-full px-3 text-base font-medium text-slate-800 dark:text-slate-200 shadow-lg bg-white dark:bg-gray-600 shadow-slate-800/5 dark:shadow-slate-200/5 ring-1 ring-slate-900/5 dark:ring-slate-100/5">
+    
+        <li id="about" class="">
+          <a class="block px-3 py-3 hover:text-emerald-600"
+            href="" title="About">About</a>
+        </li>
+      
+    
+        <li id="post" class="">
+          <a class="block px-3 py-3 hover:text-emerald-600 text-emerald-600"
+            href="/posts/" title="Post">Post</a>
+        </li>
+      
+    
+    </ul>
+  </div>
+</nav>
+
+
+  </div>
+  
+  <div class="flex-none mx-1"></div>
+  
+  <div class="flex-none md:hidden">
+    <a href="/search/" class="inline-flex items-center p-2 text-sm text-slate-800 dark:text-slate-200 rounded-lg" aria-controls="navbar-menu" aria-expanded="false">
+      <span class="sr-only">Search</span>
+      <i class="w-8 h-8">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+    <path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" />
+    <path d="M21 21l-6 -6" />
+</svg>
+
+      </i>
+    </a>
+  </div>
+  <div class="darkmode-toggle flex flex-none mr-2 md:mr-0">
+    <label for="darkmode-toggle" class="flex items-center px-3 cursor-pointer rounded-full bg-gray-100 dark:bg-gray-600" title="Toggle dark mode">
+      <input name="darkmode-toggle" id="darkmode-toggle" type="checkbox" class="sr-only peer" aria-label="Toggle dark mode">
+      <div class="group flex flex-row gap-1 justify-center h-8 px-1 rounded-full bg-white dark:bg-gray-700">
+        <i class="h-6 w-6 flex-none rounded-full bg-yellow-400 place-self-center peer-checked:group-[]:invisible">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brightness-down" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+   <path d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path>
+   <path d="M12 5l0 .01"></path>
+   <path d="M17 7l0 .01"></path>
+   <path d="M19 12l0 .01"></path>
+   <path d="M17 17l0 .01"></path>
+   <path d="M12 19l0 .01"></path>
+   <path d="M7 17l0 .01"></path>
+   <path d="M5 12l0 .01"></path>
+   <path d="M7 7l0 .01"></path>
+</svg>
+
+        </i>
+        <i class="h-6 w-6 flex-none rounded-full place-self-center invisible peer-checked:group-[]:visible">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-moon-stars" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+   <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z"></path>
+   <path d="M17 4a2 2 0 0 0 2 2a2 2 0 0 0 -2 2a2 2 0 0 0 -2 -2a2 2 0 0 0 2 -2"></path>
+   <path d="M19 11h2m-1 -1v2"></path>
+</svg>
+
+        </i>
+      </div>
+    </label>
+  </div>
+</div>
+
+  </header>
+  <main class="flex flex-auto justify-center">
+    
+<div class="w-full max-w-4xl lg:max-w-5xl">
+  <div class="flex flex-col gap-y-3 p-6 mt-6 mx-2 md:mx-0 rounded-lg shadow-md bg-white dark:bg-gray-700">
+    <h1 class="text-4xl font-semibold text-slate-800 dark:text-slate-100">
+      <a href="/posts/my-first-post/">[流程紀錄] Hugo + Github Page + Github Page 製作個人網站</a>
+    </h1>
+
+    
+    <h2 class="my-4 text-large text-slate-600 dark:text-slate-300">
+      Hugo 是一個使用 Go 語言構建的靜態網站生成器。可將Markdown 格式編寫的內容轉換為HTML，生成一個靜態網站。
+    </h2>
+    
+    
+  <ul class="flex flex-row flex-wrap text-slate-500 dark:text-slate-300">
+    
+      
+      <li>
+        <a href="/categories/%E6%B5%81%E7%A8%8B%E7%B4%80%E9%8C%84/"
+          class="text-sm mr-2 px-2 py-1 rounded border border-emerald-800 bg-emerald-800 text-slate-50">
+          流程紀錄
+        </a>
+      </li>
+      
+    
+    
+      
+      <li>
+        <a href="/tags/git/"
+          class="flex flex-row text-sm mr-2 py-1">
+          <i class="h-5 w-5 flex-none">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+   <path d="M5 9l14 0"></path>
+   <path d="M5 15l14 0"></path>
+   <path d="M11 4l-4 16"></path>
+   <path d="M17 4l-4 16"></path>
+</svg>
+
+          </i>
+          <span class="ml-0">git</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/tags/github/"
+          class="flex flex-row text-sm mr-2 py-1">
+          <i class="h-5 w-5 flex-none">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+   <path d="M5 9l14 0"></path>
+   <path d="M5 15l14 0"></path>
+   <path d="M11 4l-4 16"></path>
+   <path d="M17 4l-4 16"></path>
+</svg>
+
+          </i>
+          <span class="ml-0">github</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/tags/github-page/"
+          class="flex flex-row text-sm mr-2 py-1">
+          <i class="h-5 w-5 flex-none">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+   <path d="M5 9l14 0"></path>
+   <path d="M5 15l14 0"></path>
+   <path d="M11 4l-4 16"></path>
+   <path d="M17 4l-4 16"></path>
+</svg>
+
+          </i>
+          <span class="ml-0">github page</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/tags/hugo/"
+          class="flex flex-row text-sm mr-2 py-1">
+          <i class="h-5 w-5 flex-none">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+   <path d="M5 9l14 0"></path>
+   <path d="M5 15l14 0"></path>
+   <path d="M11 4l-4 16"></path>
+   <path d="M17 4l-4 16"></path>
+</svg>
+
+          </i>
+          <span class="ml-0">hugo</span>
+        </a>
+      </li>
+      
+    
+  </ul>
+
+
+
+    <div class="flex flex-col gap-y-1 md:flex-row md:gap-y-0 md:gap-x-4 text-slate-500 dark:text-slate-300">
+  
+  
+  <div class="flex flex-row text-base gap-x-1">
+    <i class="h-6 w-6 flex-none">
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+   <path d="M4 7a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12z"></path>
+   <path d="M16 3v4"></path>
+   <path d="M8 3v4"></path>
+   <path d="M4 11h16"></path>
+   <path d="M11 15h1"></path>
+   <path d="M12 15v3"></path>
+</svg>
+
+    </i>
+    <time datetime="2024-02-02T14:15:59&#43;08:00">
+      2024-02-02
+    </time>
+  </div>
+
+  <div class="flex flex-row text-base gap-x-1">
+    <i class="h-6 w-6 flex-none">
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hourglass-high" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+   <path d="M6.5 7h11"></path>
+   <path d="M6 20v-2a6 6 0 1 1 12 0v2a1 1 0 0 1 -1 1h-10a1 1 0 0 1 -1 -1z"></path>
+   <path d="M6 4v2a6 6 0 1 0 12 0v-2a1 1 0 0 0 -1 -1h-10a1 1 0 0 0 -1 1z"></path>
+</svg>
+
+    </i>
+    <span>
+      3 minutes to read
+    </span>
+  </div>
+</div>
+
+
+    
+      
+      <section class="prose prose-slate dark:prose-invert w-full max-w-4xl lg:max-w-5xl mt-6">
+        <h2>Table of Contents</h2>
+        <aside><nav id="TableOfContents">
+  <ul>
+    <li><a href="#local">Local</a></li>
+    <li><a href="#github">Github</a>
+      <ul>
+        <li><a href="#github-pages">Github pages</a></li>
+        <li><a href="#github-action">Github action</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></aside>
+      </section>
+      
+    
+
+    <article class="mt-6 w-full max-w-4xl lg:max-w-5xl prose prose-slate dark:prose-invert prose-quoteless post-content">
+      <p>自從閱讀了<strong>卡片盒筆記法</strong> &amp; <strong>打造第二大腦</strong>，默默開始將筆記由 Notion 遷移至 Obsidian，也越來越習慣使用 Markdown 來寫筆記。</p>
+<p>在 Medium 不支援 Markdown 的情況下，興起了自己試著建一個的念頭..</p>
+<h2 id="local">Local</h2>
+<ol>
+<li>安裝 Hugo</li>
+</ol>
+<ul>
+<li><a href="https://gohugo.io/installation/macos/" target="_blank" rel="noopener">macOS | Hugo (gohugo.io)</a>
+，使用 <code>homebrew</code> 進行安裝</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>    brew install hugo
+</span></span></code></pre></div><ol start="2">
+<li>創一個資料夾放置相關資料 ex. <code>blog</code></li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>hugo new site &lt;資料夾名稱&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>hugo new site &lt;github帳號.github.io&gt;
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#此處命名為github帳號，方便後續使用github page</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>cd &lt;資料夾名稱&gt;
+</span></span><span style="display:flex;"><span>cd &lt;github帳號.github.io&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>git init
+</span></span></code></pre></div><ol start="3">
+<li>
+<p>Hugo 框架資料夾結構</p>
+<ul>
+<li><a href="https://gohugo.io/getting-started/directory-structure/" target="_blank" rel="noopener">Directory structure | Hugo (gohugo.io)</a>
+</li>
+</ul>
+<pre tabindex="0"><code> my-site/
+ ├── archetypes/  (放置一些md文章的模板)
+ │   └── default.md
+ ├── assets/
+ ├── config/   &lt;-- site configuration
+ │   └── _default/
+ │       └── hugo.toml &lt;-- site configuration
+ ├── content/ (文章放置的位置)
+ ├── data/
+ ├── i18n/
+ ├── layouts/
+ ├── public/     &lt;-- created when you build your site
+ ├── resources/  &lt;-- created when you build your site
+ ├── config.toml(or hugo.toml)/ (一些參數的設定檔)
+ ├── static/ (靜態檔案放置的位置(如圖片檔))
+ └── themes/ (落格使用的主題放置的位置)
+</code></pre></li>
+<li>
+<p>安裝 blog 主題</p>
+</li>
+</ol>
+<ul>
+<li>
+<p>此次使用<code> Tailwind</code> 主題</p>
+<ul>
+<li><a href="https://themes.gohugo.io/themes/hugo-theme-tailwind/" target="_blank" rel="noopener">Tailwind</a>
+</li>
+</ul>
+</li>
+<li>
+<p>git submodule 方式安裝</p>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git submodule add https://github.com/tomowang/hugo-theme-tailwind.git themes/tailwind
+</span></span></code></pre></div><ul>
+<li>開啟 config.toml(or hugo.toml), 更改 theme to &ldquo;paper&rdquo;</li>
+</ul>
+<pre tabindex="0"><code>theme = &#34;paper&#34;
+</code></pre><ol start="5">
+<li>啟動 Hugo 伺服器查看網站</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>hugo server
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#Press `Ctrl + C` to stop Hugo’s development server.</span>
+</span></span></code></pre></div><ol start="6">
+<li>嘗試新增 content</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>hugo new content posts/my-first-post.md
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#Hugo created the file in the `content/posts` directory</span>
+</span></span></code></pre></div><pre tabindex="0"><code>   +++
+   title = &#39;My First Post&#39;
+   date = 2024-01-14T07:07:07+01:00
+   draft = true
+   +++
+</code></pre><ol start="7">
+<li>部署時，刪去 draft = true，terminal 輸入<code>hugo</code> 產生部署使用的<code>public</code>資料夾</li>
+</ol>
+<h2 id="github">Github</h2>
+<h3 id="github-pages">Github pages</h3>
+<ul>
+<li><a href="https://gohugo.io/hosting-and-deployment/hosting-on-github/" target="_blank" rel="noopener">Host on GitHub Pages | Hugo (gohugo.io)</a>
+</li>
+</ul>
+<ol>
+<li>設定 Github pages</li>
+</ol>
+<ul>
+<li>在自己的 Github 新增名稱為<code>&lt;Github的名稱&gt;.github.io</code>的 repo 然後在本地端的 blog 目錄中加入這個 repo 的 remote 位址</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>git remote add origin &lt;repo位址&gt;
+</span></span></code></pre></div><ul>
+<li>使用 Github pages 的網頁，網址會是.github.io，所以要修改 config.toml，把 url 改成相對應的網址</li>
+</ul>
+<ol start="2">
+<li>將資料夾 commit 完後 push 至 Github</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>  git add .
+</span></span><span style="display:flex;"><span>  git commit -m <span style="color:#e6db74">&#34;test&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>  git push origin
+</span></span></code></pre></div><h3 id="github-action">Github action</h3>
+<ol>
+<li>
+<p>至 GitHub repository 頁面，選取  <strong>Settings</strong> &gt; <strong>Pages</strong>
+<div class="not-prose">
+<figure>
+    <img src="/images/hugo-deploy-01.png"
+      alt="" 
+      loading="lazy"
+    >
+  </figure></div>
+</p>
+</li>
+<li>
+<p>更改  <strong>Source</strong>  為  <code>GitHub Actions</code>
+<div class="not-prose">
+<figure>
+    <img src="/images/hugo-deploy-02.png"
+      alt="" 
+      loading="lazy"
+    >
+  </figure></div>
+</p>
+</li>
+<li>
+<p>在本機資料夾中創造一個空的資料夾<code>.github</code></p>
+</li>
+</ol>
+<pre tabindex="0"><code>  .github/workflows/hugo.yaml
+</code></pre><ol start="4">
+<li>在 hugo.yaml 中貼上下方文字，根據需要修改分支名稱和 Hugo 版本</li>
+</ol>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-YAML" data-lang="YAML"><span style="display:flex;"><span><span style="color:#75715e"># Sample workflow for building and deploying a Hugo site to GitHub Pages</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">name</span>: <span style="color:#ae81ff">Deploy Hugo site to Pages</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">on</span>:
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e"># Runs on pushes targeting the default branch</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">push</span>:
+</span></span><span style="display:flex;"><span>		<span style="color:#f92672">branches</span>:
+</span></span><span style="display:flex;"><span>			- <span style="color:#ae81ff">main</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#75715e"># Allows you to run this workflow manually from the Actions tab</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">workflow_dispatch</span>:
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">permissions</span>:
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">contents</span>: <span style="color:#ae81ff">read</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">pages</span>: <span style="color:#ae81ff">write</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">id-token</span>: <span style="color:#ae81ff">write</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">concurrency</span>:
+</span></span><span style="display:flex;"><span><span style="color:#f92672">group</span>: <span style="color:#e6db74">&#34;pages&#34;</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">cancel-in-progress</span>: <span style="color:#66d9ef">false</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Default to bash</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">defaults</span>:
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">run</span>:
+</span></span><span style="display:flex;"><span>		<span style="color:#f92672">shell</span>: <span style="color:#ae81ff">bash</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">jobs</span>:
+</span></span><span style="display:flex;"><span> <span style="color:#75715e"># Build job</span>
+</span></span><span style="display:flex;"><span> <span style="color:#f92672">build</span>:
+</span></span><span style="display:flex;"><span>	 <span style="color:#f92672">runs-on</span>: <span style="color:#ae81ff">ubuntu-latest</span>
+</span></span><span style="display:flex;"><span>	 <span style="color:#f92672">env</span>:
+</span></span><span style="display:flex;"><span>		 <span style="color:#f92672">HUGO_VERSION</span>: <span style="color:#ae81ff">0.121.0</span>
+</span></span><span style="display:flex;"><span>	 <span style="color:#f92672">steps</span>:
+</span></span><span style="display:flex;"><span>		 - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Install Hugo CLI</span>
+</span></span><span style="display:flex;"><span>		   <span style="color:#f92672">run</span>: <span style="color:#ae81ff">|</span>
+</span></span><span style="display:flex;"><span>			 <span style="color:#ae81ff">wget -O ${{ runner.temp }}/hugo.deb https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.deb \</span>
+</span></span><span style="display:flex;"><span>			 <span style="color:#75715e">&amp;&amp;</span> <span style="color:#ae81ff">sudo dpkg -i ${{ runner.temp }}/hugo.deb</span>
+</span></span><span style="display:flex;"><span>		- <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Install Dart Sass</span>
+</span></span><span style="display:flex;"><span>		  <span style="color:#f92672">run</span>: <span style="color:#ae81ff">sudo snap install dart-sass</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#75715e"># You may remove this step if your site, themes, and modules do not transpile Sass to CSS using the [Dart Sass](https://gohugo.io/hugo-pipes/transpile-sass-to-css/#dart-sass) transpiler.</span>
+</span></span><span style="display:flex;"><span>		- <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Checkout</span>
+</span></span><span style="display:flex;"><span>		  <span style="color:#f92672">uses</span>: <span style="color:#ae81ff">actions/checkout@v4</span>
+</span></span><span style="display:flex;"><span>		  <span style="color:#f92672">with</span>:
+</span></span><span style="display:flex;"><span>			  <span style="color:#f92672">submodules</span>: <span style="color:#ae81ff">recursive</span>
+</span></span><span style="display:flex;"><span>			  <span style="color:#f92672">fetch-depth</span>: <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>		- <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Setup Pages</span>
+</span></span><span style="display:flex;"><span>		  <span style="color:#f92672">id</span>: <span style="color:#ae81ff">pages</span>
+</span></span><span style="display:flex;"><span>		  <span style="color:#f92672">uses</span>: <span style="color:#ae81ff">actions/configure-pages@v4</span>
+</span></span><span style="display:flex;"><span>		- <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Install Node.js dependencies</span>
+</span></span><span style="display:flex;"><span>		  <span style="color:#f92672">run</span>: <span style="color:#e6db74">&#34;[[ -f package-lock.json || -f npm-shrinkwrap.json ]] &amp;&amp; npm ci || true&#34;</span>
+</span></span><span style="display:flex;"><span>	    - <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Build with Hugo</span>
+</span></span><span style="display:flex;"><span>		  <span style="color:#f92672">env</span>:
+</span></span><span style="display:flex;"><span>		  <span style="color:#75715e"># For maximum backward compatibility with Hugo modules</span>
+</span></span><span style="display:flex;"><span>			  <span style="color:#f92672">HUGO_ENVIRONMENT</span>: <span style="color:#ae81ff">production</span>
+</span></span><span style="display:flex;"><span>			  <span style="color:#f92672">HUGO_ENV</span>: <span style="color:#ae81ff">production</span>
+</span></span><span style="display:flex;"><span>		  <span style="color:#f92672">run</span>: <span style="color:#ae81ff">|</span>
+</span></span><span style="display:flex;"><span>			  <span style="color:#ae81ff">hugo \</span>
+</span></span><span style="display:flex;"><span>				  --<span style="color:#ae81ff">gc \</span>
+</span></span><span style="display:flex;"><span>				   --<span style="color:#ae81ff">minify \</span>
+</span></span><span style="display:flex;"><span>				   --<span style="color:#ae81ff">baseURL &#34;${{ steps.pages.outputs.base_url }}/&#34;</span>
+</span></span><span style="display:flex;"><span>		- <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Upload artifact</span>
+</span></span><span style="display:flex;"><span>		- <span style="color:#f92672">uses</span>: <span style="color:#ae81ff">actions/upload-pages-artifact@v2</span>
+</span></span><span style="display:flex;"><span>		- <span style="color:#f92672">with</span>:
+</span></span><span style="display:flex;"><span>			  <span style="color:#f92672">path</span>: <span style="color:#ae81ff">./public</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Deployment job</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">deploy</span>:
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">environment</span>:
+</span></span><span style="display:flex;"><span>		<span style="color:#f92672">name</span>: <span style="color:#ae81ff">github-pages</span>
+</span></span><span style="display:flex;"><span>		<span style="color:#f92672">url</span>: <span style="color:#ae81ff">${{ steps.deployment.outputs.page_url }}</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">runs-on</span>: <span style="color:#ae81ff">ubuntu-latest</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">needs</span>: <span style="color:#ae81ff">build</span>
+</span></span><span style="display:flex;"><span>	<span style="color:#f92672">steps</span>:
+</span></span><span style="display:flex;"><span>		- <span style="color:#f92672">name</span>: <span style="color:#ae81ff">Deploy to GitHub Pages</span>
+</span></span><span style="display:flex;"><span>		- <span style="color:#f92672">id</span>: <span style="color:#ae81ff">deployment</span>
+</span></span><span style="display:flex;"><span>		- <span style="color:#f92672">uses</span>: <span style="color:#ae81ff">actions/deploy-pages@v3</span>
+</span></span></code></pre></div><ol start="5">
+<li>
+<p>git commit <code>Add workflow</code>，將檔案 push 至 GitHub</p>
+</li>
+<li>
+<p>在 git hub 首頁點選  <strong>Actions</strong> ，會看到以下畫面，當部署完成燈號會由黃轉綠
+<div class="not-prose">
+<figure>
+    <img src="/images/hugo-deploy-03.png"
+      alt="" 
+      loading="lazy"
+    >
+  </figure></div>
+
+<div class="not-prose">
+<figure>
+    <img src="/images/hugo-deploy-04.png"
+      alt="" 
+      loading="lazy"
+    >
+  </figure></div>
+</p>
+</li>
+<li>
+<p>點 <code>commit message</code> 可以看到部署完成的網站，未來重新 push 變更時，GitHub 都會重新部署。
+<div class="not-prose">
+<figure>
+    <img src="/images/hugo-deploy-05.png"
+      alt="" 
+      loading="lazy"
+    >
+  </figure></div>
+</p>
+</li>
+</ol>
+<hr>
+<p>References:</p>
+<ul>
+<li><a href="https://docs.github.com/en/actions/using-workflows/caching-dependencies-to-speed-up-workflows" target="_blank" rel="noopener">Caching dependencies to speed up workflows - GitHub Docs</a>
+</li>
+<li><a href="https://docs.github.com/en/actions" target="_blank" rel="noopener">GitHub Actions documentation - GitHub Docs</a>
+</li>
+</ul>
+
+    </article>
+
+    
+
+
+
+  </div>
+</div>
+
+  </main>
+  <footer class="flex flex-none justify-center">
+    <section class="flex flex-col md:flex-row mx-2 md:mx-0 gap-2 md:gap-0 justify-between w-full max-w-4xl lg:max-w-5xl py-6 text-slate-500 dark:text-slate-300">
+  <div class="flex flex-row">
+    
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+
+  </div>
+  <div class="grow"></div>
+  <div class="flex flex-row">
+    <i class="h-6 w-6 flex-none"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+   <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0"></path>
+   <path d="M14 9.75a3.016 3.016 0 0 0 -4.163 .173a2.993 2.993 0 0 0 0 4.154a3.016 3.016 0 0 0 4.163 .173"></path>
+</svg>
+</i> 2024 SW
+    
+  </div>
+  
+  <div class="flex flex-row">
+    <span class="ml-0 pl-0 md:ml-2 md:pl-2 border-l-0 md:border-l border-slate-300 dark:border-slate-400">
+      Powered by <a href="https://gohugo.io" target="_blank" rel="noopener" class="underline">Hugo</a> <span class="text-red-600">&hearts;</span> <a href="https://github.com/tomowang/hugo-theme-tailwind" target="_blank" rel="noopener" class="underline">Tailwind</a>
+    </span>
+  </div>
+  
+</section>
+
+  </footer>
+  <script src="/main.min.c6372b6836971865bd94bfde974748aca8415824a2facab6ccd66a87384bfacb.js"></script>
+
+<div class="hidden top-1 right-1" id="code-copy">
+  <i class="h-6 w-6 block">
+    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copy" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M7 7m0 2.667a2.667 2.667 0 0 1 2.667 -2.667h8.666a2.667 2.667 0 0 1 2.667 2.667v8.666a2.667 2.667 0 0 1 -2.667 2.667h-8.666a2.667 2.667 0 0 1 -2.667 -2.667z" />
+  <path d="M4.012 16.737a2.005 2.005 0 0 1 -1.012 -1.737v-10c0 -1.1 .9 -2 2 -2h10c.75 0 1.158 .385 1.5 1" />
+</svg>
+
+  </i>
+</div>
+<div class="hidden top-1 right-1" id="code-copy-done">
+  <i class="h-6 w-6 block">
+    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-check" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M5 12l5 5l10 -10" />
+</svg>
+
+  </i>
+</div><script src="/code-copy.min.4be95a7068ec721962fd0df64ce1c8673df8035fde465874f1e6e67e2aac7f71.js"></script>
+
+
+
+
+
+</body>
+</html>

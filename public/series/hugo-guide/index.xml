@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hugo Guide on SW Blog</title>
+    <link>https://sweiihuang.github.io/series/hugo-guide/</link>
+    <description>Recent content in Hugo Guide on SW Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>SW</copyright>
+    <lastBuildDate>Fri, 02 Feb 2024 14:15:59 +0800</lastBuildDate>
+    <atom:link href="https://sweiihuang.github.io/series/hugo-guide/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[流程紀錄] Hugo &#43; Github Page &#43; Github Page 製作個人網站</title>
+      <link>https://sweiihuang.github.io/posts/my-first-post/</link>
+      <pubDate>Fri, 02 Feb 2024 14:15:59 +0800</pubDate>
+      <guid>https://sweiihuang.github.io/posts/my-first-post/</guid>
+      <description>自從閱讀了卡片盒筆記法 &amp;amp; 打造第二大腦，默默開始將筆記由 Notion 遷移至 Obsidian，也越來越習慣使用 Markdown 來寫筆記。&#xA;在 Medium 不支援 Markdown 的情況下，興起了自己試著建一個的念頭..&#xA;Local 安裝 Hugo macOS | Hugo (gohugo.io) ，使用 homebrew 進行安裝 brew install hugo 創一個資料夾放置相關資料 ex. blog hugo new site &amp;lt;資料夾名稱&amp;gt; hugo new site &amp;lt;github帳號.github.io&amp;gt; #此處命名為github帳號，方便後續使用github page cd &amp;lt;資料夾名稱&amp;gt; cd &amp;lt;github帳號.github.io&amp;gt; git init Hugo 框架資料夾結構&#xA;Directory structure | Hugo (gohugo.io) my-site/ ├── archetypes/ (放置一些md文章的模板) │ └── default.md ├── assets/ ├── config/ &amp;lt;-- site configuration │ └── _default/ │ └── hugo.</description>
+    </item>
+  </channel>
+</rss>
