@@ -1,14 +1,21 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Categories on SW Blog</title>
+    <title>Categories on SW Code Journal</title>
     <link>https://sweiihuang.github.io/categories/</link>
-    <description>Recent content in Categories on SW Blog</description>
+    <description>Recent content in Categories on SW Code Journal</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>SW</copyright>
-    <lastBuildDate>Fri, 02 Feb 2024 14:15:59 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 05 Feb 2024 11:28:56 +0800</lastBuildDate>
     <atom:link href="https://sweiihuang.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>資料庫</title>
+      <link>https://sweiihuang.github.io/categories/%E8%B3%87%E6%96%99%E5%BA%AB/</link>
+      <pubDate>Mon, 05 Feb 2024 11:28:56 +0800</pubDate>
+      <guid>https://sweiihuang.github.io/categories/%E8%B3%87%E6%96%99%E5%BA%AB/</guid>
+      <description></description>
+    </item>
     <item>
       <title>流程紀錄</title>
       <link>https://sweiihuang.github.io/categories/%E6%B5%81%E7%A8%8B%E7%B4%80%E9%8C%84/</link>

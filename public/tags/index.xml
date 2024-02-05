@@ -1,14 +1,35 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tags on SW Blog</title>
+    <title>Tags on SW Code Journal</title>
     <link>https://sweiihuang.github.io/tags/</link>
-    <description>Recent content in Tags on SW Blog</description>
+    <description>Recent content in Tags on SW Code Journal</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>SW</copyright>
-    <lastBuildDate>Fri, 02 Feb 2024 14:15:59 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 05 Feb 2024 11:28:56 +0800</lastBuildDate>
     <atom:link href="https://sweiihuang.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CRUD</title>
+      <link>https://sweiihuang.github.io/tags/crud/</link>
+      <pubDate>Mon, 05 Feb 2024 11:28:56 +0800</pubDate>
+      <guid>https://sweiihuang.github.io/tags/crud/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>database</title>
+      <link>https://sweiihuang.github.io/tags/database/</link>
+      <pubDate>Mon, 05 Feb 2024 11:28:56 +0800</pubDate>
+      <guid>https://sweiihuang.github.io/tags/database/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>MongoDB</title>
+      <link>https://sweiihuang.github.io/tags/mongodb/</link>
+      <pubDate>Mon, 05 Feb 2024 11:28:56 +0800</pubDate>
+      <guid>https://sweiihuang.github.io/tags/mongodb/</guid>
+      <description></description>
+    </item>
     <item>
       <title>git</title>
       <link>https://sweiihuang.github.io/tags/git/</link>

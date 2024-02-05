@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>CRUD on SW Code Journal</title>
+    <link>https://sweiihuang.github.io/tags/crud/</link>
+    <description>Recent content in CRUD on SW Code Journal</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>SW</copyright>
+    <lastBuildDate>Mon, 05 Feb 2024 11:28:56 +0800</lastBuildDate>
+    <atom:link href="https://sweiihuang.github.io/tags/crud/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[資料庫] MongoDB CRUD：新增Create、查詢Read、修改Update和刪除Delete</title>
+      <link>https://sweiihuang.github.io/posts/mongodb-crud/</link>
+      <pubDate>Mon, 05 Feb 2024 11:28:56 +0800</pubDate>
+      <guid>https://sweiihuang.github.io/posts/mongodb-crud/</guid>
+      <description>Create 新增：用 Python 在 MongoDB 新增 JSON 格式資料 新增一筆資料 (insert_one()方法) 集合.insert_one(文件資料) collection = db.website collection.insert_one({ &amp;#34;name&amp;#34;:kyu, &amp;#34;password&amp;#34;:123 }) 每一筆存入文件的資料，都有獨立編號(MongoDB 自動產生 ID) collection = db.website result = collection.insert_one({ &amp;#34;name&amp;#34;:kyu, &amp;#34;password&amp;#34;:123 }) print(result.inserted_id) 新增多筆資料 (insert_many 方法) 集合.insert_many([文件資料,文件資料,文件資料]) 按順序取得每一筆資料的編號 collection = db.website result = collection.insert_many([{ &amp;#34;name&amp;#34;:kyu, &amp;#34;password&amp;#34;:123 },{ &amp;#34;name&amp;#34;:tek, &amp;#34;password&amp;#34;:456 }]) print(result.inserted_ids) Read 讀取：取得集合中的資料 取得集合中第一筆文件資料(find_one()) 集合.find_one() collection = db.users #要操作的集合 data = collection.find_one() print(data) 根據編號取得文件資料 文件編號是 ObjectId 物件，須從 bson.objectid 封包載入 集合.find_one(文件編號) from bson.objectid import ObjectId collection = db.</description>
+    </item>
+  </channel>
+</rss>

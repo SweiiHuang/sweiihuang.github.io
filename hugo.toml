@@ -1,5 +1,5 @@
 baseURL = "https://sweiihuang.github.io"
-title = "SW Blog"
+title = "SW Code Journal"
 author = "SW"
 copyright = "SW"
 paginate = 10
@@ -12,7 +12,7 @@ theme = "tailwind"
   contentTypeName = "posts"
 
   [params.header]
-    logo = "Hello.png"
+    logo = "TF.png"
 
   [params.footer]
     since = 2024

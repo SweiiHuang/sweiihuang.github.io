@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
-  <title>[流程紀錄] Hugo &#43; Github Page &#43; Github Page 製作個人網站 :: SW Blog - The Memory Rescue Program</title>
+  <title>[流程紀錄] Hugo &#43; Github Page &#43; Github Action 製作個人網站 :: SW Code Journal - Documenting the journey of acquired knowledge.</title>
   
   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -13,10 +13,10 @@ Directory structure | Hugo (gohugo.io) my-site/ ├── archetypes/ (放置一
 />
 <meta
   name="keywords"
-  content="hugo, tailwind, tailwindcss, hugo theme, hugo theme tailwind"
+  content="code, backend, Web Developer,"
 />
 <meta name="robots" content="noodp" />
-<meta property="og:title" content="[流程紀錄] Hugo &#43; Github Page &#43; Github Page 製作個人網站" />
+<meta property="og:title" content="[流程紀錄] Hugo &#43; Github Page &#43; Github Action 製作個人網站" />
 <meta property="og:description" content="Hugo 是一個使用 Go 語言構建的靜態網站生成器。可將Markdown 格式編寫的內容轉換為HTML，生成一個靜態網站。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://sweiihuang.github.io/posts/my-first-post/" /><meta property="article:section" content="posts" />
@@ -26,7 +26,7 @@ Directory structure | Hugo (gohugo.io) my-site/ ├── archetypes/ (放置一
 
 
 
-<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="[流程紀錄] Hugo &#43; Github Page &#43; Github Page 製作個人網站"/>
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="[流程紀錄] Hugo &#43; Github Page &#43; Github Action 製作個人網站"/>
 <meta name="twitter:description" content="Hugo 是一個使用 Go 語言構建的靜態網站生成器。可將Markdown 格式編寫的內容轉換為HTML，生成一個靜態網站。"/>
 
 
@@ -50,10 +50,10 @@ Directory structure | Hugo (gohugo.io) my-site/ ├── archetypes/ (放置一
     <div class="flex flex-row gap justify-between w-full max-w-4xl lg:max-w-5xl h-12 mt-3">
   <div class="flex-none ml-2 md:ml-0">
     <a href="/" class="">
-      <img class="h-12 w-12 rounded-full object-cover bg-gray-100" src="/Hello.png" alt="logo">
+      <img class="h-12 w-12 rounded-full object-cover bg-gray-100" src="/TF.png" alt="logo">
     </a>
   </div>
-  <div class="flex-1"></div>
+  <div class="flex-1"style="display: flex; align-items: center; margin-left: 15px;font-size: 150%; color: white; text-shadow: 2px 2px 2px black;" >SW Code Journal </div>
   <div class="flex-none">
     
 
@@ -148,7 +148,7 @@ Directory structure | Hugo (gohugo.io) my-site/ ├── archetypes/ (放置一
 <div class="w-full max-w-4xl lg:max-w-5xl">
   <div class="flex flex-col gap-y-3 p-6 mt-6 mx-2 md:mx-0 rounded-lg shadow-md bg-white dark:bg-gray-700">
     <h1 class="text-4xl font-semibold text-slate-800 dark:text-slate-100">
-      <a href="/posts/my-first-post/">[流程紀錄] Hugo + Github Page + Github Page 製作個人網站</a>
+      <a href="/posts/my-first-post/">[流程紀錄] Hugo + Github Page + Github Action 製作個人網站</a>
     </h1>
 
     
@@ -577,6 +577,61 @@ draft = true
     
 
 
+  
+<script type="text/javascript">
+  (function() {
+    const themeToggle = document.querySelector('.darkmode-toggle input');
+    const light = 'light';
+    const dark = 'dark';
+    let isDark = localStorage.theme === dark || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches);
+    let theme = isDark ? dark : light;
+
+    const s = document.createElement('script');
+    s.type = 'text/javascript';
+    const dataset = {
+        repo: 'SweiiHuang\/sweiihuang.github.io',
+        repoId: 'R_kgDOLNBUkg',
+        category: 'Announcements',
+        categoryId: 'DIC_kwDOLNBUks4Cc89f',
+        mapping: 'pathname',
+        reactionsEnabled: '1',
+        emitMetadata: '0',
+        theme: theme,
+        lang: 'en',
+    };
+    s.src = 'https://giscus.app/client.js';
+    s.crossorigin = 'anonymous';
+    s.async = true;
+    Object.entries(dataset).forEach(function(a) {
+        return s.dataset[a[0]] = a[1];
+    });
+
+    const curScriptElement = document.currentScript;
+    curScriptElement.parentNode.insertBefore(s, curScriptElement);
+
+    function sendMessage(message) {
+      const iframe = document.querySelector('iframe.giscus-frame');
+      
+      if (!iframe) return;
+      iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+    }
+
+    themeToggle.addEventListener('change', function () {
+      if (this.checked) {
+        theme = dark;
+      } else {
+        theme = light;
+      }
+      sendMessage({
+        setConfig: {
+          theme: theme,
+        }
+      });
+    });
+  })();
+</script>
+  
+
 
   </div>
 </div>
@@ -595,6 +650,22 @@ draft = true
   
   
   
+  
+    <a href="https://github.com/SweiiHuang" target="_blank" title="Github" class="flex flex-row mr-2">
+      <span class="hidden">Github</span>
+      <i class="h-6 w-6 flex-none"> <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+   <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5"></path>
+</svg>
+ </i>
+    </a>
+  
+  
+  
+    <a href="https://medium.com/@lagom247" target="_blank" title="Medium" class="flex flex-row mr-2">
+      <span class="hidden">Medium</span>
+      <i class="h-6 w-6 flex-none"> <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-medium" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 4m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z" /><path d="M8 9h1l3 3l3 -3h1" /><path d="M8 15l2 0" /><path d="M14 15l2 0" /><path d="M9 9l0 6" /><path d="M15 9l0 6" /></svg> </i>
+    </a>
   
   
 

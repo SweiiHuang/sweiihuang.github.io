@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>github on SW Blog</title>
+    <title>github on SW Code Journal</title>
     <link>https://sweiihuang.github.io/tags/github/</link>
-    <description>Recent content in github on SW Blog</description>
+    <description>Recent content in github on SW Code Journal</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>SW</copyright>
     <lastBuildDate>Fri, 02 Feb 2024 14:15:59 +0800</lastBuildDate>
     <atom:link href="https://sweiihuang.github.io/tags/github/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>[流程紀錄] Hugo &#43; Github Page &#43; Github Page 製作個人網站</title>
+      <title>[流程紀錄] Hugo &#43; Github Page &#43; Github Action 製作個人網站</title>
       <link>https://sweiihuang.github.io/posts/my-first-post/</link>
       <pubDate>Fri, 02 Feb 2024 14:15:59 +0800</pubDate>
       <guid>https://sweiihuang.github.io/posts/my-first-post/</guid>
