@@ -305,174 +305,174 @@
     <article class="mt-6 w-full max-w-4xl lg:max-w-5xl prose prose-slate dark:prose-invert prose-quoteless post-content">
       <h2 id="create-新增用-python-在-mongodb-新增-json-格式資料"><strong>Create</strong> 新增：用 Python 在 MongoDB 新增 JSON 格式資料</h2>
 <h3 id="新增一筆資料-insert_one方法">新增一筆資料 (insert_one()方法)</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>集合<span style="color:#f92672">.</span>insert_one(文件資料)
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>collection <span style="color:#f92672">=</span> db<span style="color:#f92672">.</span>website
-</span></span><span style="display:flex;"><span>collection<span style="color:#f92672">.</span>insert_one({
-</span></span><span style="display:flex;"><span>					   <span style="color:#e6db74">&#34;name&#34;</span>:kyu,
-</span></span><span style="display:flex;"><span>					   <span style="color:#e6db74">&#34;password&#34;</span>:<span style="color:#ae81ff">123</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>})
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">集合</span><span class="o">.</span><span class="n">insert_one</span><span class="p">(</span><span class="n">文件資料</span><span class="p">)</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">collection</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">website</span>
+</span></span><span class="line"><span class="cl"><span class="n">collection</span><span class="o">.</span><span class="n">insert_one</span><span class="p">({</span>
+</span></span><span class="line"><span class="cl">					   <span class="s2">&#34;name&#34;</span><span class="p">:</span><span class="n">kyu</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">					   <span class="s2">&#34;password&#34;</span><span class="p">:</span><span class="mi">123</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">})</span>
 </span></span></code></pre></div><ul>
 <li>每一筆存入文件的資料，都有獨立編號(MongoDB 自動產生 ID)</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>collection <span style="color:#f92672">=</span> db<span style="color:#f92672">.</span>website
-</span></span><span style="display:flex;"><span>result <span style="color:#f92672">=</span> collection<span style="color:#f92672">.</span>insert_one({
-</span></span><span style="display:flex;"><span>					   <span style="color:#e6db74">&#34;name&#34;</span>:kyu,
-</span></span><span style="display:flex;"><span>					   <span style="color:#e6db74">&#34;password&#34;</span>:<span style="color:#ae81ff">123</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>})
-</span></span><span style="display:flex;"><span>print(result<span style="color:#f92672">.</span>inserted_id)
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">collection</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">website</span>
+</span></span><span class="line"><span class="cl"><span class="n">result</span> <span class="o">=</span> <span class="n">collection</span><span class="o">.</span><span class="n">insert_one</span><span class="p">({</span>
+</span></span><span class="line"><span class="cl">					   <span class="s2">&#34;name&#34;</span><span class="p">:</span><span class="n">kyu</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">					   <span class="s2">&#34;password&#34;</span><span class="p">:</span><span class="mi">123</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">})</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">inserted_id</span><span class="p">)</span>
 </span></span></code></pre></div><h3 id="新增多筆資料-insert_many-方法">新增多筆資料 (insert_many 方法)</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>集合<span style="color:#f92672">.</span>insert_many([文件資料,文件資料,文件資料])
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">集合</span><span class="o">.</span><span class="n">insert_many</span><span class="p">([</span><span class="n">文件資料</span><span class="p">,</span><span class="n">文件資料</span><span class="p">,</span><span class="n">文件資料</span><span class="p">])</span>
 </span></span></code></pre></div><ul>
 <li>按順序取得每一筆資料的編號</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>collection <span style="color:#f92672">=</span> db<span style="color:#f92672">.</span>website
-</span></span><span style="display:flex;"><span>result <span style="color:#f92672">=</span> collection<span style="color:#f92672">.</span>insert_many([{
-</span></span><span style="display:flex;"><span>		<span style="color:#e6db74">&#34;name&#34;</span>:kyu,
-</span></span><span style="display:flex;"><span>		<span style="color:#e6db74">&#34;password&#34;</span>:<span style="color:#ae81ff">123</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>	},{ <span style="color:#e6db74">&#34;name&#34;</span>:tek,
-</span></span><span style="display:flex;"><span>		<span style="color:#e6db74">&#34;password&#34;</span>:<span style="color:#ae81ff">456</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>}])
-</span></span><span style="display:flex;"><span>print(result<span style="color:#f92672">.</span>inserted_ids)
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">collection</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">website</span>
+</span></span><span class="line"><span class="cl"><span class="n">result</span> <span class="o">=</span> <span class="n">collection</span><span class="o">.</span><span class="n">insert_many</span><span class="p">([{</span>
+</span></span><span class="line"><span class="cl">		<span class="s2">&#34;name&#34;</span><span class="p">:</span><span class="n">kyu</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">		<span class="s2">&#34;password&#34;</span><span class="p">:</span><span class="mi">123</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="p">},{</span> <span class="s2">&#34;name&#34;</span><span class="p">:</span><span class="n">tek</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">		<span class="s2">&#34;password&#34;</span><span class="p">:</span><span class="mi">456</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">}])</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">inserted_ids</span><span class="p">)</span>
 </span></span></code></pre></div><h2 id="read-讀取取得集合中的資料"><strong>Read</strong> 讀取：取得集合中的資料</h2>
 <h3 id="取得集合中第一筆文件資料find_one">取得集合中<strong>第一筆</strong>文件資料(find_one())</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>集合<span style="color:#f92672">.</span>find_one()
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>collection <span style="color:#f92672">=</span> db<span style="color:#f92672">.</span>users <span style="color:#75715e">#要操作的集合</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>data <span style="color:#f92672">=</span> collection<span style="color:#f92672">.</span>find_one()
-</span></span><span style="display:flex;"><span>print(data)
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">集合</span><span class="o">.</span><span class="n">find_one</span><span class="p">()</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">collection</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">users</span> <span class="c1">#要操作的集合</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">data</span> <span class="o">=</span> <span class="n">collection</span><span class="o">.</span><span class="n">find_one</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
 </span></span></code></pre></div><h3 id="根據編號取得文件資料">根據<strong>編號</strong>取得文件資料</h3>
 <ul>
 <li>文件編號是 ObjectId 物件，須從 bson.objectid 封包載入</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>集合<span style="color:#f92672">.</span>find_one(文件編號)
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> bson.objectid <span style="color:#f92672">import</span> ObjectId
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>collection <span style="color:#f92672">=</span> db<span style="color:#f92672">.</span>users <span style="color:#75715e">#要操作的集合</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>data <span style="color:#f92672">=</span> collection<span style="color:#f92672">.</span>find_one(
-</span></span><span style="display:flex;"><span>		ObjectId(<span style="color:#e6db74">&#34;12345&#34;</span>)
-</span></span><span style="display:flex;"><span>)
-</span></span><span style="display:flex;"><span>print(data)
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">集合</span><span class="o">.</span><span class="n">find_one</span><span class="p">(</span><span class="n">文件編號</span><span class="p">)</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">bson.objectid</span> <span class="kn">import</span> <span class="n">ObjectId</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">collection</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">users</span> <span class="c1">#要操作的集合</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">data</span> <span class="o">=</span> <span class="n">collection</span><span class="o">.</span><span class="n">find_one</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">		<span class="n">ObjectId</span><span class="p">(</span><span class="s2">&#34;12345&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
 </span></span></code></pre></div><h3 id="取得文件中欄位資料">取得文件中欄位資料</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>文件資料[<span style="color:#e6db74">&#34;欄位名稱&#34;</span>]
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>collection <span style="color:#f92672">=</span> db<span style="color:#f92672">.</span>users <span style="color:#75715e">#要操作的集合</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>data <span style="color:#f92672">=</span> collection<span style="color:#f92672">.</span>find_one()
-</span></span><span style="display:flex;"><span>print(data[<span style="color:#e6db74">&#34;_id&#34;</span>])
-</span></span><span style="display:flex;"><span>print(data[<span style="color:#e6db74">&#34;name&#34;</span>])
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">文件資料</span><span class="p">[</span><span class="s2">&#34;欄位名稱&#34;</span><span class="p">]</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">collection</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">users</span> <span class="c1">#要操作的集合</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">data</span> <span class="o">=</span> <span class="n">collection</span><span class="o">.</span><span class="n">find_one</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s2">&#34;_id&#34;</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s2">&#34;name&#34;</span><span class="p">])</span>
 </span></span></code></pre></div><h3 id="取得所有文件資料">取得所有文件資料</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>集合<span style="color:#f92672">.</span>find()
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>collection <span style="color:#f92672">=</span> db<span style="color:#f92672">.</span>users
-</span></span><span style="display:flex;"><span>cursor <span style="color:#f92672">=</span> collection<span style="color:#f92672">.</span>find()
-</span></span><span style="display:flex;"><span>print(cursor) <span style="color:#75715e">#Cursor物件</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#使用for迴圈逐一取得文件</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> doc <span style="color:#f92672">in</span> cursor:
-</span></span><span style="display:flex;"><span>print(doc)
-</span></span><span style="display:flex;"><span>print(doc[<span style="color:#e6db74">&#34;name&#34;</span>]) <span style="color:#75715e">#取得特定資料</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">集合</span><span class="o">.</span><span class="n">find</span><span class="p">()</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">collection</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">users</span>
+</span></span><span class="line"><span class="cl"><span class="n">cursor</span> <span class="o">=</span> <span class="n">collection</span><span class="o">.</span><span class="n">find</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">cursor</span><span class="p">)</span> <span class="c1">#Cursor物件</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#使用for迴圈逐一取得文件</span>
+</span></span><span class="line"><span class="cl"><span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">cursor</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">doc</span><span class="p">[</span><span class="s2">&#34;name&#34;</span><span class="p">])</span> <span class="c1">#取得特定資料</span>
 </span></span></code></pre></div><h2 id="update-更新文件中的欄位資料"><strong>Update</strong> 更新：文件中的欄位資料</h2>
 <h3 id="更新符合條件一筆文件欄位">更新<strong>符合條件</strong>一筆文件欄位</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>集合<span style="color:#f92672">.</span>update_one(篩選條件,更新的資訊)
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>collection <span style="color:#f92672">=</span> db<span style="color:#f92672">.</span>users
-</span></span><span style="display:flex;"><span>collection<span style="color:#f92672">.</span>update_one({
-</span></span><span style="display:flex;"><span>	<span style="color:#e6db74">&#34;email&#34;</span>:<span style="color:#e6db74">&#34;test@test.com&#34;</span>
-</span></span><span style="display:flex;"><span>},{<span style="color:#e6db74">&#34;$set&#34;</span>:{ <span style="color:#75715e">#set資料覆蓋過去的意思</span>
-</span></span><span style="display:flex;"><span>		   <span style="color:#e6db74">&#34;password&#34;</span>:<span style="color:#e6db74">&#34;test123&#34;</span>
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>  })
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">集合</span><span class="o">.</span><span class="n">update_one</span><span class="p">(</span><span class="n">篩選條件</span><span class="p">,</span><span class="n">更新的資訊</span><span class="p">)</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">collection</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">users</span>
+</span></span><span class="line"><span class="cl"><span class="n">collection</span><span class="o">.</span><span class="n">update_one</span><span class="p">({</span>
+</span></span><span class="line"><span class="cl">	<span class="s2">&#34;email&#34;</span><span class="p">:</span><span class="s2">&#34;test@test.com&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">},{</span><span class="s2">&#34;$set&#34;</span><span class="p">:{</span> <span class="c1">#set資料覆蓋過去的意思</span>
+</span></span><span class="line"><span class="cl">		   <span class="s2">&#34;password&#34;</span><span class="p">:</span><span class="s2">&#34;test123&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="p">})</span>
 </span></span></code></pre></div><h3 id="更新多筆文件欄位">更新多筆文件欄位</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>集合<span style="color:#f92672">.</span>update_many(篩選條件,更新的資訊)
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>collection <span style="color:#f92672">=</span> db<span style="color:#f92672">.</span>users
-</span></span><span style="display:flex;"><span>collection<span style="color:#f92672">.</span>update_many({
-</span></span><span style="display:flex;"><span>	<span style="color:#e6db74">&#34;level&#34;</span>:<span style="color:#ae81ff">2</span>
-</span></span><span style="display:flex;"><span>},{<span style="color:#e6db74">&#34;$set&#34;</span>:{ <span style="color:#75715e">#set資料覆蓋過去的意思</span>
-</span></span><span style="display:flex;"><span>		   <span style="color:#e6db74">&#34;role&#34;</span>:<span style="color:#e6db74">&#34;editor&#34;</span>
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>  })
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">集合</span><span class="o">.</span><span class="n">update_many</span><span class="p">(</span><span class="n">篩選條件</span><span class="p">,</span><span class="n">更新的資訊</span><span class="p">)</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">collection</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">users</span>
+</span></span><span class="line"><span class="cl"><span class="n">collection</span><span class="o">.</span><span class="n">update_many</span><span class="p">({</span>
+</span></span><span class="line"><span class="cl">	<span class="s2">&#34;level&#34;</span><span class="p">:</span><span class="mi">2</span>
+</span></span><span class="line"><span class="cl"><span class="p">},{</span><span class="s2">&#34;$set&#34;</span><span class="p">:{</span> <span class="c1">#set資料覆蓋過去的意思</span>
+</span></span><span class="line"><span class="cl">		   <span class="s2">&#34;role&#34;</span><span class="p">:</span><span class="s2">&#34;editor&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="p">})</span>
 </span></span></code></pre></div><ul>
 <li>
 <p>覆蓋/新增欄位 <code>$set</code></p>
 </li>
 <li>
 <p>加減數字欄位 <code>$inc</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>collection <span style="color:#f92672">=</span> db<span style="color:#f92672">.</span>users
-</span></span><span style="display:flex;"><span>collection<span style="color:#f92672">.</span>update_many({
-</span></span><span style="display:flex;"><span>	<span style="color:#e6db74">&#34;email&#34;</span>:<span style="color:#e6db74">&#34;test@test.com&#34;</span>
-</span></span><span style="display:flex;"><span>},{<span style="color:#e6db74">&#34;$inc&#34;</span>:{
-</span></span><span style="display:flex;"><span>		   <span style="color:#e6db74">&#34;level&#34;</span>:<span style="color:#ae81ff">2</span> <span style="color:#75715e">#減的話負數</span>
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>})
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">collection</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">users</span>
+</span></span><span class="line"><span class="cl"><span class="n">collection</span><span class="o">.</span><span class="n">update_many</span><span class="p">({</span>
+</span></span><span class="line"><span class="cl">	<span class="s2">&#34;email&#34;</span><span class="p">:</span><span class="s2">&#34;test@test.com&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">},{</span><span class="s2">&#34;$inc&#34;</span><span class="p">:{</span>
+</span></span><span class="line"><span class="cl">		   <span class="s2">&#34;level&#34;</span><span class="p">:</span><span class="mi">2</span> <span class="c1">#減的話負數</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">})</span>
 </span></span></code></pre></div></li>
 <li>
 <p>乘除數字欄位 <code>$mul</code></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>collection <span style="color:#f92672">=</span> db<span style="color:#f92672">.</span>users
-</span></span><span style="display:flex;"><span>collection<span style="color:#f92672">.</span>update_many({
-</span></span><span style="display:flex;"><span>	<span style="color:#e6db74">&#34;email&#34;</span>:<span style="color:#e6db74">&#34;test@test.com&#34;</span>
-</span></span><span style="display:flex;"><span>},{<span style="color:#e6db74">&#34;$mul&#34;</span>:{
-</span></span><span style="display:flex;"><span>		   <span style="color:#e6db74">&#34;level&#34;</span>:<span style="color:#ae81ff">0.5</span>    <span style="color:#75715e">#除</span>
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>})
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">collection</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">users</span>
+</span></span><span class="line"><span class="cl"><span class="n">collection</span><span class="o">.</span><span class="n">update_many</span><span class="p">({</span>
+</span></span><span class="line"><span class="cl">	<span class="s2">&#34;email&#34;</span><span class="p">:</span><span class="s2">&#34;test@test.com&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">},{</span><span class="s2">&#34;$mul&#34;</span><span class="p">:{</span>
+</span></span><span class="line"><span class="cl">		   <span class="s2">&#34;level&#34;</span><span class="p">:</span><span class="mf">0.5</span>    <span class="c1">#除</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">})</span>
 </span></span></code></pre></div></li>
 <li>
 <p>清除欄位 <code>$unset</code> : 整個欄位刪掉</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>collection <span style="color:#f92672">=</span> db<span style="color:#f92672">.</span>users
-</span></span><span style="display:flex;"><span>collection<span style="color:#f92672">.</span>update_many({
-</span></span><span style="display:flex;"><span>	<span style="color:#e6db74">&#34;email&#34;</span>:<span style="color:#e6db74">&#34;test@test.com&#34;</span>
-</span></span><span style="display:flex;"><span>},{<span style="color:#e6db74">&#34;$unset&#34;</span>:{
-</span></span><span style="display:flex;"><span>		   <span style="color:#e6db74">&#34;name&#34;</span>:<span style="color:#ae81ff">1</span>
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>})
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">collection</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">users</span>
+</span></span><span class="line"><span class="cl"><span class="n">collection</span><span class="o">.</span><span class="n">update_many</span><span class="p">({</span>
+</span></span><span class="line"><span class="cl">	<span class="s2">&#34;email&#34;</span><span class="p">:</span><span class="s2">&#34;test@test.com&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">},{</span><span class="s2">&#34;$unset&#34;</span><span class="p">:{</span>
+</span></span><span class="line"><span class="cl">		   <span class="s2">&#34;name&#34;</span><span class="p">:</span><span class="mi">1</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">})</span>
 </span></span></code></pre></div></li>
 </ul>
 <h3 id="查看更新一筆文件的結果">查看更新一筆文件的結果</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>collection <span style="color:#f92672">=</span> db<span style="color:#f92672">.</span>users
-</span></span><span style="display:flex;"><span>result <span style="color:#f92672">=</span> collection<span style="color:#f92672">.</span>update_one({
-</span></span><span style="display:flex;"><span>	<span style="color:#e6db74">&#34;email&#34;</span>:<span style="color:#e6db74">&#34;test@test.com&#34;</span>
-</span></span><span style="display:flex;"><span>},{<span style="color:#e6db74">&#34;$set&#34;</span>:{ <span style="color:#75715e">#set資料覆蓋過去的意思</span>
-</span></span><span style="display:flex;"><span>		   <span style="color:#e6db74">&#34;password&#34;</span>:<span style="color:#e6db74">&#34;test123&#34;</span>
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>  })
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 符合篩選條件的文件數量</span>
-</span></span><span style="display:flex;"><span>print(result<span style="color:#f92672">.</span>matched_count)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 實際完成更新的文件數量</span>
-</span></span><span style="display:flex;"><span>print(result<span style="color:#f92672">.</span>modified_count)
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">collection</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">users</span>
+</span></span><span class="line"><span class="cl"><span class="n">result</span> <span class="o">=</span> <span class="n">collection</span><span class="o">.</span><span class="n">update_one</span><span class="p">({</span>
+</span></span><span class="line"><span class="cl">	<span class="s2">&#34;email&#34;</span><span class="p">:</span><span class="s2">&#34;test@test.com&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">},{</span><span class="s2">&#34;$set&#34;</span><span class="p">:{</span> <span class="c1">#set資料覆蓋過去的意思</span>
+</span></span><span class="line"><span class="cl">		   <span class="s2">&#34;password&#34;</span><span class="p">:</span><span class="s2">&#34;test123&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="p">})</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 符合篩選條件的文件數量</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">matched_count</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 實際完成更新的文件數量</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">modified_count</span><span class="p">)</span>
 </span></span></code></pre></div><h3 id="查看更新多筆文件的結果">查看更新多筆文件的結果</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>collection <span style="color:#f92672">=</span> db<span style="color:#f92672">.</span>users
-</span></span><span style="display:flex;"><span>result <span style="color:#f92672">=</span> collection<span style="color:#f92672">.</span>update_many({
-</span></span><span style="display:flex;"><span>	<span style="color:#e6db74">&#34;level&#34;</span>:<span style="color:#ae81ff">2</span>
-</span></span><span style="display:flex;"><span>},{<span style="color:#e6db74">&#34;$set&#34;</span>:{ <span style="color:#75715e">#set資料覆蓋過去的意思</span>
-</span></span><span style="display:flex;"><span>		   <span style="color:#e6db74">&#34;role&#34;</span>:<span style="color:#e6db74">&#34;editor&#34;</span>
-</span></span><span style="display:flex;"><span>}
-</span></span><span style="display:flex;"><span>  })
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 符合篩選條件的文件數量</span>
-</span></span><span style="display:flex;"><span>print(result<span style="color:#f92672">.</span>matched_count)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 實際完成更新的文件數量</span>
-</span></span><span style="display:flex;"><span>print(result<span style="color:#f92672">.</span>modified_count)
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">collection</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">users</span>
+</span></span><span class="line"><span class="cl"><span class="n">result</span> <span class="o">=</span> <span class="n">collection</span><span class="o">.</span><span class="n">update_many</span><span class="p">({</span>
+</span></span><span class="line"><span class="cl">	<span class="s2">&#34;level&#34;</span><span class="p">:</span><span class="mi">2</span>
+</span></span><span class="line"><span class="cl"><span class="p">},{</span><span class="s2">&#34;$set&#34;</span><span class="p">:{</span> <span class="c1">#set資料覆蓋過去的意思</span>
+</span></span><span class="line"><span class="cl">		   <span class="s2">&#34;role&#34;</span><span class="p">:</span><span class="s2">&#34;editor&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="p">})</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 符合篩選條件的文件數量</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">matched_count</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 實際完成更新的文件數量</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">modified_count</span><span class="p">)</span>
 </span></span></code></pre></div><h2 id="delete-刪除資料"><strong>Delete</strong> 刪除資料</h2>
 <h3 id="刪除一筆文件資料">刪除一筆文件資料</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>集合<span style="color:#f92672">.</span>delete_one(篩選條件)
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>collection <span style="color:#f92672">=</span> db<span style="color:#f92672">.</span>users
-</span></span><span style="display:flex;"><span>result <span style="color:#f92672">=</span> collection<span style="color:#f92672">.</span>delete_one(
-</span></span><span style="display:flex;"><span>					  {<span style="color:#e6db74">&#34;e-mail&#34;</span>:<span style="color:#e6db74">&#34;test1@test.com&#34;</span>}
-</span></span><span style="display:flex;"><span>)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>print(result<span style="color:#f92672">.</span>deleted_count)
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">集合</span><span class="o">.</span><span class="n">delete_one</span><span class="p">(</span><span class="n">篩選條件</span><span class="p">)</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">collection</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">users</span>
+</span></span><span class="line"><span class="cl"><span class="n">result</span> <span class="o">=</span> <span class="n">collection</span><span class="o">.</span><span class="n">delete_one</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">					  <span class="p">{</span><span class="s2">&#34;e-mail&#34;</span><span class="p">:</span><span class="s2">&#34;test1@test.com&#34;</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">deleted_count</span><span class="p">)</span>
 </span></span></code></pre></div><h3 id="刪除多筆文件資料">刪除多筆文件資料</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>集合<span style="color:#f92672">.</span>delete_many(篩選條件)
-</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>collection <span style="color:#f92672">=</span> db<span style="color:#f92672">.</span>users
-</span></span><span style="display:flex;"><span>result <span style="color:#f92672">=</span> collection<span style="color:#f92672">.</span>delete_many(
-</span></span><span style="display:flex;"><span>					  {<span style="color:#e6db74">&#34;level&#34;</span>:<span style="color:#ae81ff">1</span>}
-</span></span><span style="display:flex;"><span>)
-</span></span><span style="display:flex;"><span>print(result<span style="color:#f92672">.</span>deleted_count)
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">集合</span><span class="o">.</span><span class="n">delete_many</span><span class="p">(</span><span class="n">篩選條件</span><span class="p">)</span>
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="n">collection</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">users</span>
+</span></span><span class="line"><span class="cl"><span class="n">result</span> <span class="o">=</span> <span class="n">collection</span><span class="o">.</span><span class="n">delete_many</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">					  <span class="p">{</span><span class="s2">&#34;level&#34;</span><span class="p">:</span><span class="mi">1</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="o">.</span><span class="n">deleted_count</span><span class="p">)</span>
 </span></span></code></pre></div>
     </article>
 

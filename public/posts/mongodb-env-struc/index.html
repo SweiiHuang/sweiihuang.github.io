@@ -300,7 +300,7 @@
 <ul>
 <li>安裝套件：pymongo</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#960050;background-color:#1e0010">$</span> python <span style="color:#f92672">-</span>m pip install pymongo
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="err">$</span> <span class="n">python</span> <span class="o">-</span><span class="n">m</span> <span class="n">pip</span> <span class="n">install</span> <span class="n">pymongo</span>
 </span></span></code></pre></div><blockquote>
 <p>PyMongo requires dnspython to support mongodb+srv:// connection strings and MongoDB Atlas. dnspython is automatically installed when installing or upgrading to the latest PyMongo version.</p>
 </blockquote>
@@ -324,48 +324,48 @@
 </li>
 </ul>
 <h3 id="連線將資料傳入-mongodb">連線，將資料傳入 MongoDB</h3>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">import</span> pymongo
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 載入</span>
-</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> pymongo.mongo_client <span style="color:#f92672">import</span> MongoClient
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>uri <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;mongodb+srv://&lt;帳密&gt;@mycluster.mack.mongodb.net/?retryWrites=true&amp;w=majority&#34;</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Create a new client and connect to the server</span>
-</span></span><span style="display:flex;"><span>client <span style="color:#f92672">=</span> MongoClient(uri)
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># Send a ping to confirm a successful connection</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">try</span>:
-</span></span><span style="display:flex;"><span>client<span style="color:#f92672">.</span>admin<span style="color:#f92672">.</span>command(<span style="color:#e6db74">&#34;ping&#34;</span>)
-</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;Pinged your deployment. You successfully connected to MongoDB!&#34;</span>)
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">except</span> <span style="color:#a6e22e">Exception</span> <span style="color:#66d9ef">as</span> e:
-</span></span><span style="display:flex;"><span>print(e)
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 用於測試電腦網路中主機之間的連通性。具體來說，ping 會發送一種特殊類型的網路控制消息，這種消息被稱為 ICMP 回顯請求（ICMP Echo Request），然後等待接收主機回應。如果接收到回應，就表示兩台主機之間存在網路連接。</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 這個術語源自 sonar 技術中用於確認目標存在的聲納信號，而在計算機網路中，&#34;ping&#34; 就成為了確認網路連接的一種常用方式。</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e">#把資料放進資料庫</span>
-</span></span><span style="display:flex;"><span>db <span style="color:#f92672">=</span> client<span style="color:#f92672">.</span>test <span style="color:#75715e"># 選擇要操作的資料庫test</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>collection <span style="color:#f92672">=</span> db<span style="color:#f92672">.</span>users <span style="color:#75715e"># 選擇要操作的集合users</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#75715e"># 把文件document存入collection中</span>
-</span></span><span style="display:flex;"><span>collection<span style="color:#f92672">.</span>insert_one(
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;name&#34;</span>: <span style="color:#e6db74">&#34;test&#34;</span>,
-</span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;gender&#34;</span>: <span style="color:#e6db74">&#34;male&#34;</span>,
-</span></span><span style="display:flex;"><span>} <span style="color:#75715e">#每個會員一個dict</span>
-</span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>)
-</span></span><span style="display:flex;"><span>print(<span style="color:#e6db74">&#34;Update Successfully!&#34;</span>)
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-python" data-lang="python"><span class="line"><span class="cl"><span class="kn">import</span> <span class="nn">pymongo</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 載入</span>
+</span></span><span class="line"><span class="cl"><span class="kn">from</span> <span class="nn">pymongo.mongo_client</span> <span class="kn">import</span> <span class="n">MongoClient</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">uri</span> <span class="o">=</span> <span class="s2">&#34;mongodb+srv://&lt;帳密&gt;@mycluster.mack.mongodb.net/?retryWrites=true&amp;w=majority&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Create a new client and connect to the server</span>
+</span></span><span class="line"><span class="cl"><span class="n">client</span> <span class="o">=</span> <span class="n">MongoClient</span><span class="p">(</span><span class="n">uri</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># Send a ping to confirm a successful connection</span>
+</span></span><span class="line"><span class="cl"><span class="k">try</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl"><span class="n">client</span><span class="o">.</span><span class="n">admin</span><span class="o">.</span><span class="n">command</span><span class="p">(</span><span class="s2">&#34;ping&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Pinged your deployment. You successfully connected to MongoDB!&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1"># 用於測試電腦網路中主機之間的連通性。具體來說，ping 會發送一種特殊類型的網路控制消息，這種消息被稱為 ICMP 回顯請求（ICMP Echo Request），然後等待接收主機回應。如果接收到回應，就表示兩台主機之間存在網路連接。</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 這個術語源自 sonar 技術中用於確認目標存在的聲納信號，而在計算機網路中，&#34;ping&#34; 就成為了確認網路連接的一種常用方式。</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">#把資料放進資料庫</span>
+</span></span><span class="line"><span class="cl"><span class="n">db</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">test</span> <span class="c1"># 選擇要操作的資料庫test</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">collection</span> <span class="o">=</span> <span class="n">db</span><span class="o">.</span><span class="n">users</span> <span class="c1"># 選擇要操作的集合users</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1"># 把文件document存入collection中</span>
+</span></span><span class="line"><span class="cl"><span class="n">collection</span><span class="o">.</span><span class="n">insert_one</span><span class="p">(</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl"><span class="s2">&#34;name&#34;</span><span class="p">:</span> <span class="s2">&#34;test&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl"><span class="s2">&#34;gender&#34;</span><span class="p">:</span> <span class="s2">&#34;male&#34;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span> <span class="c1">#每個會員一個dict</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="nb">print</span><span class="p">(</span><span class="s2">&#34;Update Successfully!&#34;</span><span class="p">)</span>
 </span></span></code></pre></div>
     </article>
 
