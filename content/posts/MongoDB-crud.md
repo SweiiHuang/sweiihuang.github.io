@@ -1,6 +1,6 @@
 +++
 author = "SW"
-title = '[資料庫]MongoDB CRUD：新增Create、查詢Read、修改Update和刪除Delete'
+title = '[資料庫] MongoDB CRUD：新增Create、查詢Read、修改Update和刪除Delete'
 date = 2024-02-05T11:28:56+08:00
 description = '使用新增Create、查詢Read、修改Update和刪除Delete等方式，管理MongoDB中的資料文件。'
 tags = [
@@ -17,7 +17,9 @@ categories = ["資料庫"]
 
 ```python
 集合.insert_one(文件資料)
+```
 
+```python
 collection = db.website
 collection.insert_one({
 					   "name":kyu,
@@ -139,7 +141,7 @@ print(doc["name"]) #取得特定資料
 collection = db.users
 collection.update_one({
 	"email":"test@test.com"
-},{"$set":{ %% set資料覆蓋過去的意思  %%
+},{"$set":{ #set資料覆蓋過去的意思
 		   "password":"test123"
 }
   })
@@ -155,7 +157,7 @@ collection.update_one({
 collection = db.users
 collection.update_many({
 	"level":2
-},{"$set":{ %% set資料覆蓋過去的意思  %%
+},{"$set":{ #set資料覆蓋過去的意思
 		   "role":"editor"
 }
   })
@@ -169,34 +171,34 @@ collection.update_many({
   collection.update_many({
   	"email":"test@test.com"
   },{"$inc":{
-  		   "level":2 %% 減的話負數 %%
+  		   "level":2 #減的話負數
   }
   })
   ```
 
 - 乘除數字欄位 `$mul`
 
-```python
- collection = db.users
-collection.update_many({
-	"email":"test@test.com"
-},{"$mul":{
-		   "level":0.5    #除
-}
- })
-```
+  ```python
+  collection = db.users
+  collection.update_many({
+  	"email":"test@test.com"
+  },{"$mul":{
+  		   "level":0.5    #除
+  }
+  })
+  ```
 
 - 清除欄位 `$unset` : 整個欄位刪掉
 
-```python
+  ```python
   collection = db.users
-collection.update_many({
-	"email":"test@test.com"
-},{"$unset":{
-		   "name":1
-}
+  collection.update_many({
+  	"email":"test@test.com"
+  },{"$unset":{
+  		   "name":1
+  }
   })
-```
+  ```
 
 ### 查看更新一筆文件的結果
 
@@ -204,7 +206,7 @@ collection.update_many({
 collection = db.users
 result = collection.update_one({
 	"email":"test@test.com"
-},{"$set":{ %% set資料覆蓋過去的意思  %%
+},{"$set":{ #set資料覆蓋過去的意思
 		   "password":"test123"
 }
   })
@@ -223,7 +225,7 @@ print(result.modified_count)
 collection = db.users
 result = collection.update_many({
 	"level":2
-},{"$set":{ %% set資料覆蓋過去的意思  %%
+},{"$set":{ #set資料覆蓋過去的意思
 		   "role":"editor"
 }
   })

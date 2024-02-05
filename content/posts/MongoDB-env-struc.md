@@ -1,6 +1,6 @@
 +++
 author = "SW"
-title = '[資料庫]MongoDB 環境建置 & 資料結構'
+title = '[資料庫] MongoDB 環境建置 & 資料結構'
 date = 2024-02-05T10:59:43+08:00
 description = 'MongoDB是一個開源的NoSQL資料庫管理系統，以文件導向的方式儲存資料，適用於處理非結構化或半結構化數據。'
 tags = [
