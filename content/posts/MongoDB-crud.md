@@ -5,7 +5,7 @@ date = 2024-02-05T11:28:56+08:00
 description = '使用新增Create、查詢Read、修改Update和刪除Delete等方式，管理MongoDB中的資料文件。'
 tags = [
     "database",
-    "MongoDB"
+    "MongoDB",
     "CRUD"]
 series = ["MongoDB"]
 categories = ["資料庫"]
