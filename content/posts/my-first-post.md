@@ -1,6 +1,6 @@
 +++
 author = "SW"
-title = '[流程紀錄] Hugo + Github Page + Github Page 製作個人網站'
+title = '[流程紀錄] Hugo + Github Page + Github Action 製作個人網站'
 date = 2024-02-02T14:15:59+08:00
 description = 'Hugo 是一個使用 Go 語言構建的靜態網站生成器。可將Markdown 格式編寫的內容轉換為HTML，生成一個靜態網站。'
 tags = [
