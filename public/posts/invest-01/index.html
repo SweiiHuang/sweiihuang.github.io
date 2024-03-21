@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <title>[投資工具] 01 - What is ETF ? :: SW Code Journal - Documenting the journey of acquired knowledge.</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta
+  name="description"
+  content="ETF / 股票 / 基金 的差別 ETF（Exchange-Traded Fund）： 在股市買賣，但證交稅比股票少 0.2 籌碼不固定(組成變動，實物申贖) ETF 是一種類似股票交易的投資工具，代表著一籃子的股票、債券或其他資產。 把指數證券化成商品交易，被動買入成分組成股。 投資者可以通過買賣 ETF 的股票來間接投資 ETF 所擁有的資產。 股票（Stock）： 股市買賣 股票代表著對一家公司的所有權。 股票可以在證券交易所買賣，投資者購買股票時，就是在投資該公司的業務表現和增長前景。 股票的價格會受到公司業績、市場狀況、行業發展等多個因素的影響。 基金（Mutual Fund）： 透過銀行買賣 基金是由一個專業管理團隊管理的投資組合，由多個投資者共同擁有。 投資者購買基金的份額，進而擁有基金所持有的各種資產。 基金可以是股票型、債券型、貨幣市場型等，不同類型的基金擁有不同的投資策略和風險水平。 ETF vs 一般基金 購入 差別 一般基金：投資者 向 投信 用 淨值 購買，無法私下交換 ETF： 一般投資者，在股票市場透過券商撮合，用市值購買 合格法人，向 投信 直接用淨值申購(買)或贖回(賣)(最小單位 500 張) ETF 公開說明書 3 大參考重點 指數：指數股票型基金應再敘明之事項 指數名稱 指數編撰法 審核時間 股利：收益分配 無配息 有配息 評價時間 內扣費用：受益人之權利及費用負擔 經理費 保管費 其他費用 年度費用率 🔗 公開說明書查詢網頁 ETF 股價怎麼追蹤指數？ ETF = 開放型基金 = 基金資產 隨著 投資人 的 申購 而增加，贖回 則減少"
+/>
+<meta
+  name="keywords"
+  content="code, backend, Web Developer,"
+/>
+<meta name="robots" content="noodp" />
+<meta property="og:title" content="[投資工具] 01 - What is ETF ?" />
+<meta property="og:description" content="ETF = 追蹤某個指數 像 股票 一樣買賣的 基金" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://sweiihuang.github.io/posts/invest-01/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2024-02-19T20:56:23+08:00" />
+<meta property="article:modified_time" content="2024-02-19T20:56:23+08:00" />
+
+
+
+
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="[投資工具] 01 - What is ETF ?"/>
+<meta name="twitter:description" content="ETF = 追蹤某個指數 像 股票 一樣買賣的 基金"/>
+
+
+<link rel="canonical" href="https://sweiihuang.github.io/posts/invest-01/" />
+
+<link rel="shortcut icon" href="/favicon.ico" />
+<link rel="stylesheet" href="/css/index.min.83dc3d7977882bb95ca0ff7e5e94bb5b781744b215a8637932dced303d7aded2.css">
+
+
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4RLRHV1XW0"></script>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-4RLRHV1XW0', { 'anonymize_ip': false });
+}
+</script>
+
+
+
+
+
+  
+</head>
+<body class="flex flex-col min-h-screen w-full bg-slate-50 dark:bg-gray-800">
+  <header class="flex flex-none justify-center z-10">
+    <div class="flex flex-row gap justify-between w-full max-w-4xl lg:max-w-5xl h-12 mt-3">
+  <div class="flex-none ml-2 md:ml-0">
+    <a href="/" class="">
+      <img class="h-12 w-12 rounded-full object-cover bg-gray-100" src="/TF.png" alt="logo">
+    </a>
+  </div>
+  <div class="flex-1"style="display: flex; align-items: center; margin-left: 15px;font-size: 150%; color: white; text-shadow: 2px 2px 2px black;" > SW.blah.blah.Blog </div>
+  <div class="flex-none">
+    
+
+
+
+<nav class="h-full static">
+  <button id="navbar-menu-toggle" type="button" class="inline-flex items-center p-2 text-sm text-slate-800 dark:text-slate-200 rounded-lg md:hidden" aria-controls="navbar-menu" aria-expanded="false">
+    <span class="sr-only">Open main menu</span>
+    <i class="w-8 h-8">
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-menu-2" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 6l16 0" />
+  <path d="M4 12l16 0" />
+  <path d="M4 18l16 0" />
+</svg>
+
+    </i>
+  </button>
+  <div class="absolute md:static top-16 left-0 right-0 z-50 hidden w-full md:block md:w-auto" id="navbar-menu">
+    <ul class="flex flex-col mx-2 md:mx-0 md:flex-row md:border-0 rounded-sm md:rounded-full px-3 text-base font-medium text-slate-800 dark:text-slate-200 shadow-lg bg-white dark:bg-gray-600 shadow-slate-800/5 dark:shadow-slate-200/5 ring-1 ring-slate-900/5 dark:ring-slate-100/5">
+    
+        <li id="about" class="">
+          <a class="block px-3 py-3 hover:text-emerald-600"
+            href="/about/" title="About">About</a>
+        </li>
+      
+    
+        <li id="post" class="">
+          <a class="block px-3 py-3 hover:text-emerald-600 text-emerald-600"
+            href="/posts/" title="Post">Post</a>
+        </li>
+      
+    
+    </ul>
+  </div>
+</nav>
+
+
+  </div>
+  
+  <div class="flex-none mx-1"></div>
+  
+  <div class="flex-none md:hidden">
+    <a href="/search/" class="inline-flex items-center p-2 text-sm text-slate-800 dark:text-slate-200 rounded-lg" aria-controls="navbar-menu" aria-expanded="false">
+      <span class="sr-only">Search</span>
+      <i class="w-8 h-8">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+    <path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" />
+    <path d="M21 21l-6 -6" />
+</svg>
+
+      </i>
+    </a>
+  </div>
+  <div class="darkmode-toggle flex flex-none mr-2 md:mr-0">
+    <label for="darkmode-toggle" class="flex items-center px-3 cursor-pointer rounded-full bg-gray-100 dark:bg-gray-600" title="Toggle dark mode">
+      <input name="darkmode-toggle" id="darkmode-toggle" type="checkbox" class="sr-only peer" aria-label="Toggle dark mode">
+      <div class="group flex flex-row gap-1 justify-center h-8 px-1 rounded-full bg-white dark:bg-gray-700">
+        <i class="h-6 w-6 flex-none rounded-full bg-yellow-400 place-self-center peer-checked:group-[]:invisible">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brightness-down" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+   <path d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path>
+   <path d="M12 5l0 .01"></path>
+   <path d="M17 7l0 .01"></path>
+   <path d="M19 12l0 .01"></path>
+   <path d="M17 17l0 .01"></path>
+   <path d="M12 19l0 .01"></path>
+   <path d="M7 17l0 .01"></path>
+   <path d="M5 12l0 .01"></path>
+   <path d="M7 7l0 .01"></path>
+</svg>
+
+        </i>
+        <i class="h-6 w-6 flex-none rounded-full place-self-center invisible peer-checked:group-[]:visible">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-moon-stars" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+   <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z"></path>
+   <path d="M17 4a2 2 0 0 0 2 2a2 2 0 0 0 -2 2a2 2 0 0 0 -2 -2a2 2 0 0 0 2 -2"></path>
+   <path d="M19 11h2m-1 -1v2"></path>
+</svg>
+
+        </i>
+      </div>
+    </label>
+  </div>
+</div>
+
+  </header>
+  <main class="flex flex-auto justify-center">
+    
+<div class="w-full max-w-4xl lg:max-w-5xl">
+  <div class="flex flex-col gap-y-3 p-6 mt-6 mx-2 md:mx-0 rounded-lg shadow-md bg-white dark:bg-gray-700">
+    <h1 class="text-4xl font-semibold text-slate-800 dark:text-slate-100">
+      <a href="/posts/invest-01/">[投資工具] 01 - What is ETF ?</a>
+    </h1>
+
+    
+    <h2 class="my-4 text-large text-slate-600 dark:text-slate-300">
+      ETF = 追蹤某個指數 像 股票 一樣買賣的 基金
+    </h2>
+    
+    
+  <ul class="flex flex-row flex-wrap text-slate-500 dark:text-slate-300">
+    
+      
+      <li>
+        <a href="/categories/%E6%8A%95%E8%B3%87%E5%B0%8F%E7%99%BD%E7%AD%86%E8%A8%98/"
+          class="text-sm mr-2 px-2 py-1 rounded border border-emerald-800 bg-emerald-800 text-slate-50">
+          投資小白筆記
+        </a>
+      </li>
+      
+    
+    
+      
+      <li>
+        <a href="/tags/etf/"
+          class="flex flex-row text-sm mr-2 py-1">
+          <i class="h-5 w-5 flex-none">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+   <path d="M5 9l14 0"></path>
+   <path d="M5 15l14 0"></path>
+   <path d="M11 4l-4 16"></path>
+   <path d="M17 4l-4 16"></path>
+</svg>
+
+          </i>
+          <span class="ml-0">ETF</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/tags/invest/"
+          class="flex flex-row text-sm mr-2 py-1">
+          <i class="h-5 w-5 flex-none">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+   <path d="M5 9l14 0"></path>
+   <path d="M5 15l14 0"></path>
+   <path d="M11 4l-4 16"></path>
+   <path d="M17 4l-4 16"></path>
+</svg>
+
+          </i>
+          <span class="ml-0">Invest</span>
+        </a>
+      </li>
+      
+    
+  </ul>
+
+
+
+    <div class="flex flex-col gap-y-1 md:flex-row md:gap-y-0 md:gap-x-4 text-slate-500 dark:text-slate-300">
+  
+  
+  <div class="flex flex-row text-base gap-x-1">
+    <i class="h-6 w-6 flex-none">
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+   <path d="M4 7a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2v-12z"></path>
+   <path d="M16 3v4"></path>
+   <path d="M8 3v4"></path>
+   <path d="M4 11h16"></path>
+   <path d="M11 15h1"></path>
+   <path d="M12 15v3"></path>
+</svg>
+
+    </i>
+    <time datetime="2024-02-19T20:56:23&#43;08:00">
+      2024-02-19
+    </time>
+  </div>
+
+  <div class="flex flex-row text-base gap-x-1">
+    <i class="h-6 w-6 flex-none">
+      <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hourglass-high" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+   <path d="M6.5 7h11"></path>
+   <path d="M6 20v-2a6 6 0 1 1 12 0v2a1 1 0 0 1 -1 1h-10a1 1 0 0 1 -1 -1z"></path>
+   <path d="M6 4v2a6 6 0 1 0 12 0v-2a1 1 0 0 0 -1 -1h-10a1 1 0 0 0 -1 1z"></path>
+</svg>
+
+    </i>
+    <span>
+      2 minutes to read
+    </span>
+  </div>
+</div>
+
+
+    
+      
+      <section class="prose prose-slate dark:prose-invert w-full max-w-4xl lg:max-w-5xl mt-6">
+        <h2>Table of Contents</h2>
+        <aside><nav id="TableOfContents">
+  <ul>
+    <li><a href="#etf--股票--基金-的差別">ETF / 股票 / 基金 的差別</a>
+      <ul>
+        <li><a href="#etf-vs-一般基金-購入-差別">ETF vs 一般基金 購入 差別</a></li>
+      </ul>
+    </li>
+    <li><a href="#etf-公開說明書-3-大參考重點">ETF 公開說明書 3 大參考重點</a></li>
+    <li><a href="#etf-股價怎麼追蹤指數">ETF 股價怎麼追蹤指數？</a>
+      <ul>
+        <li><a href="#追蹤指數的方法">追蹤指數的方法</a></li>
+        <li><a href="#etf-中運作角色">ETF 中運作角色</a></li>
+      </ul>
+    </li>
+    <li><a href="#etf-的兩種價格">ETF 的兩種價格</a>
+      <ul>
+        <li><a href="#淨值--實際價值--在初級市場上交易的價格">淨值 = 實際價值 = 在初級市場上交易的價格</a></li>
+        <li><a href="#市價--市場價格--在次級市場股票市場上交易的價格">市價 = 市場價格 = 在次級市場（股票市場）上交易的價格</a></li>
+        <li><a href="#etf-折溢價代表的意義">ETF 折溢價代表的意義？</a></li>
+        <li><a href="#etf-折溢價合理範圍">ETF 折溢價合理範圍？</a></li>
+      </ul>
+    </li>
+    <li><a href="#實物--現金-申贖機制-creation-and-redemption">實物 / 現金 申贖機制 Creation and Redemption</a>
+      <ul>
+        <li><a href="#實物申贖機制初級市場的資金門檻較高通常只有大戶或法人機構可以進行">實物申贖機制(初級市場的資金門檻較高，通常只有大戶或法人機構可以進行)</a></li>
+        <li><a href="#現金申贖機制">現金申贖機制</a></li>
+      </ul>
+    </li>
+    <li><a href="#etf-投資標的類型">ETF 投資標的類型</a></li>
+    <li><a href="#殖利率是什麼">殖利率是什麼？</a></li>
+  </ul>
+</nav></aside>
+      </section>
+      
+    
+
+    <article class="mt-6 w-full max-w-4xl lg:max-w-5xl prose prose-slate dark:prose-invert prose-quoteless post-content">
+      <h2 id="etf--股票--基金-的差別">ETF / 股票 / 基金 的差別</h2>
+<ol>
+<li>ETF（Exchange-Traded Fund）：</li>
+</ol>
+<ul>
+<li>在股市買賣，但證交稅比股票少 0.2</li>
+<li>籌碼不固定(組成變動，實物申贖)</li>
+<li>ETF 是一種類似股票交易的投資工具，代表著一籃子的股票、債券或其他資產。</li>
+<li>把指數證券化成商品交易，被動買入成分組成股。</li>
+<li>投資者可以通過買賣 ETF 的股票來間接投資 ETF 所擁有的資產。</li>
+</ul>
+<ol start="2">
+<li>股票（Stock）：</li>
+</ol>
+<ul>
+<li>股市買賣</li>
+<li>股票代表著對一家公司的所有權。</li>
+<li>股票可以在證券交易所買賣，投資者購買股票時，就是在投資該公司的業務表現和增長前景。</li>
+<li>股票的價格會受到公司業績、市場狀況、行業發展等多個因素的影響。</li>
+</ul>
+<ol start="3">
+<li>基金（Mutual Fund）：</li>
+</ol>
+<ul>
+<li>透過銀行買賣</li>
+<li>基金是由一個專業管理團隊管理的投資組合，由多個投資者共同擁有。</li>
+<li>投資者購買基金的份額，進而擁有基金所持有的各種資產。</li>
+<li>基金可以是股票型、債券型、貨幣市場型等，不同類型的基金擁有不同的投資策略和風險水平。</li>
+</ul>
+<h3 id="etf-vs-一般基金-購入-差別">ETF vs 一般基金 購入 差別</h3>
+<ul>
+<li>一般基金：投資者 向 投信 用 淨值 購買，無法私下交換</li>
+<li>ETF：
+<ol>
+<li>一般投資者，在股票市場透過券商撮合，用市值購買</li>
+<li>合格法人，向 投信 直接用淨值申購(買)或贖回(賣)(最小單位 500 張)</li>
+</ol>
+</li>
+</ul>
+<h2 id="etf-公開說明書-3-大參考重點">ETF 公開說明書 3 大參考重點</h2>
+<ol>
+<li>指數：指數股票型基金應再敘明之事項</li>
+</ol>
+<ul>
+<li>指數名稱</li>
+<li>指數編撰法</li>
+<li>審核時間</li>
+</ul>
+<ol start="2">
+<li>股利：收益分配</li>
+</ol>
+<ul>
+<li>無配息</li>
+<li>有配息</li>
+<li>評價時間</li>
+</ul>
+<ol start="3">
+<li>內扣費用：受益人之權利及費用負擔</li>
+</ol>
+<ul>
+<li>經理費</li>
+<li>保管費</li>
+<li>其他費用</li>
+<li>年度費用率</li>
+</ul>
+<p>🔗 <a href="https://www.moneydj.com/etf/x/default.xdjhtm" target="_blank" rel="noopener">公開說明書查詢網頁</a>
+</p>
+<h2 id="etf-股價怎麼追蹤指數">ETF 股價怎麼追蹤指數？</h2>
+<p><strong>ETF = 開放型基金 = 基金資產 隨著 投資人 的 申購 而增加，贖回 則減少</strong></p>
+<h3 id="追蹤指數的方法">追蹤指數的方法</h3>
+<ol>
+<li>
+<p>全部複製（Full Replication）： 在全部複製的方法中，ETF 會試圖購買指數中包含的所有股票或資產，以與指數的表現保持盡可能一致。這意味著 ETF 將按照指數的權重比例購買每一檔股票，以保持與指數的相同配置。這種方法通常用於較為流通的指數。 例如：006208</p>
+</li>
+<li>
+<p>樣本複製（Sampling Replication）： 在樣本複製的方法中，ETF 可能不會購買指數中的所有股票或資產，而是選擇購買一個部分的股票組合，以代表整個指數。通常，ETF 會選擇那些對指數表現有較大貢獻的股票來進行複製，同時避免複製整個指數所需的全部成本。</p>
+</li>
+<li>
+<p>合成複製（Synthetic Replication）： 在合成複製的方法中，ETF 可能會使用衍生品工具，如期貨合約或選擇權，來模擬指數的表現。通常，這種方法會由專業的金融機構提供相關的金融工具，以便 ETF 可以在不實際購買指數成分股的情況下追蹤指數。</p>
+</li>
+</ol>
+<h3 id="etf-中運作角色">ETF 中運作角色</h3>
+<ul>
+<li>
+<p>基金經理人：負責管理基金的專業投資者。他們負責挑選投資標的、調整投資組合以及監督基金的日常運作</p>
+</li>
+<li>
+<p>散戶：個人投資者，在股票市場以市價買賣 ETF。</p>
+</li>
+<li>
+<p>法人：機構投資者 = 發行券商(即證券公司)，在初級和次級市場進行交易，從股市買進股票，然後將這些股票交換成 ETF，這樣的操作也可能在投信（基金公司）處進行。</p>
+</li>
+</ul>
+<h2 id="etf-的兩種價格">ETF 的兩種價格</h2>
+<h3 id="淨值--實際價值--在初級市場上交易的價格">淨值 = 實際價值 = 在初級市場上交易的價格</h3>
+<p><strong>ETF 淨資產 / ETF 發行單位 = ETF 每單位淨值</strong></p>
+<ul>
+<li>基金公司(初級市場：基金誕生)=投信公司=指數表現/指數指標</li>
+<li>淨值來自<strong>成分股</strong>(債/期/現/息)，代表「一籃子股票所組成的基金的真實價值」</li>
+<li>權重高低(比例)，比例高對淨值影響力大，反之亦然</li>
+<li>計算方式為 ETF 組合當中所有股票的市值加總除以發行張數</li>
+<li>當規則價格不變，買越多只改變規模</li>
+<li>通常只有大戶、法人可以透過淨值申購或兌換</li>
+</ul>
+<h3 id="市價--市場價格--在次級市場股票市場上交易的價格">市價 = 市場價格 = 在次級市場（股票市場）上交易的價格</h3>
+<ul>
+<li>股票市場(次級市場)上的價格，是一般投資人買賣的價格，但這並不能代表 ETF 實際的價值</li>
+</ul>
+<p><strong>一般來說，ETF 的淨值和市價會趨於接近，股價越接近真實的價值越好</strong></p>
+<h4 id="etf-折價市價--淨值"><strong>ETF 折價：市價 &lt; 淨值</strong></h4>
+<ul>
+<li>代表投資人僅願意用比淨值更低的價格買進該檔 ETF</li>
+</ul>
+<h4 id="etf-溢價市價--淨值"><strong>ETF 溢價：市價 &gt; 淨值</strong></h4>
+<ul>
+<li>代表投資人願意用比淨值更高的價格買進該檔 ETF (有時價格是被炒高的，並不代表它本身具有這麼高的價值。)</li>
+</ul>
+<p><strong>二個價格都是追蹤指數，只是一個跟得比較緊(淨值)，一個偶爾會漏拍追不上(市價)</strong></p>
+<h3 id="etf-折溢價代表的意義">ETF 折溢價代表的意義？</h3>
+<ol>
+<li>市場供需</li>
+</ol>
+<ul>
+<li>若投資人看好一檔 ETF，紛紛追價買入，導致該檔 ETF 的市價越來越高，甚至超越淨值，那麼就會產生 ETF 溢價的狀況，這時進場可能就會買貴</li>
+<li>若投資人，紛紛拋售一檔 ETF，導致該檔 ETF 的市價跌到低於淨值，那麼就會產生 ETF 折價的狀況，這時進場反而有機會撿到便宜</li>
+</ul>
+<ol start="2">
+<li>流動性</li>
+</ol>
+<ul>
+<li>當 ETF 流動性不佳，沒有人願意買，那麼只能用更低的價格出售，這時就會產生 ETF 折價</li>
+<li>規模較大的 ETF，通常流動性較高</li>
+</ul>
+<h3 id="etf-折溢價合理範圍">ETF 折溢價合理範圍？</h3>
+<ul>
+<li>ETF 折溢價的合理範圍大約落在 -1％ ～ +1％ 之間，當一檔 ETF 折價、溢價的幅度過大時要留意</li>
+<li>折溢價高於 +1％，此時進場可能會買貴，須謹慎考慮是否要買進</li>
+<li>ETF 折溢價低於 -1％，則要留意折價背後的原因、以及是否有流動性的問題</li>
+</ul>
+<p>🔗 ETF 折溢價查詢</p>
+<ul>
+<li><a href="https://mis.twse.com.tw/stock/etf_nav.jsp?ex=tse" target="_blank" rel="noopener">基本市況報導網站</a>
+</li>
+<li>ETF 發行商的官網</li>
+</ul>
+<h2 id="實物--現金-申贖機制-creation-and-redemption">實物 / 現金 申贖機制 Creation and Redemption</h2>
+<h3 id="實物申贖機制初級市場的資金門檻較高通常只有大戶或法人機構可以進行">實物申贖機制(初級市場的資金門檻較高，通常只有大戶或法人機構可以進行)</h3>
+<p><strong>股票 換 ETF = 實物申購(ETF 申購)</strong>
+在實物申購中，投資者拿出和成分股一樣權重比例的股票換成 ETF(有些可直接使用現金)</p>
+<p><strong>ETF 換 股票 = 實物買回(ETF 贖回)</strong>
+在實物買回中，投資者把 ETF 拿給發行商，再依照權重比例換回成分股股票</p>
+<p><strong>這種實物申購和贖回機制，通常會通過證券交易所或其他交易平台執行，以保證 ETF 的市場價格能夠與其基礎資產的淨值保持接近。他們負責進行資產的交換和調整，以確保 ETF 的投資組合符合其追蹤的指數或投資策略。</strong></p>
+<h3 id="現金申贖機制">現金申贖機制</h3>
+<p><strong>一般投資者</strong>透過證券交易所或其他交易平台，以市場價格購買 ETF 的股票份額，並支付相應的現金。這筆現金將被用來增加 ETF 的資金，以便 ETF 可以購買相應的資產，如股票、債券等，來構建其投資組合。</p>
+<h2 id="etf-投資標的類型">ETF 投資標的類型</h2>
+<p>ETF 像一個帳戶，裡面有各式各樣金融產品</p>
+<ul>
+<li>股票型 ETF</li>
+<li>債券型 ETF</li>
+<li>期貨型 ETF</li>
+</ul>
+<h2 id="殖利率是什麼">殖利率是什麼？</h2>
+<p>殖利率是投資者評估股票投資回報的一個重要指標，它衡量了投資者在購買股票時可以獲得的股息收益率。</p>
+<ul>
+<li>
+<p>殖利率定義：
+殖利率是指一家公司每股股利與股票價格的比例。它表示了公司每股股利在目前股價下所能提供的回報率。在投資決策中，留意股票的殖利率可作為一個參考指標</p>
+</li>
+<li>
+<p>殖利率計算：<strong>股票殖利率 = 現金股利 ÷ 股價</strong></p>
+<blockquote>
+<p>現金股利是指公司每股支付的股息，而股價則是指投資者在市場上購買該股票時所支付的價格。</p>
+</blockquote>
+</li>
+<li>
+<p>本金與利息關係：
+在殖利率中，分子代表著股息（即投資者獲得的收入），而分母代表著股票的成本（即投資者支付的本金）。因此，殖利率高意味著相對較少的本金可以獲得較多的股息，這表明該股票的投資回報率較高。</p>
+</li>
+<li>
+<p>殖利率的意義：
+較高的股票殖利率通常被認為是一個吸引投資者的因素，因為它表示投資者可以以較低的成本獲得較高的股息收入。然而，投資者還應該注意，股票殖利率可能受到多種因素的影響，包括公司業績、行業狀況、經濟環境等。</p>
+</li>
+<li>
+<p>殖利率多少合理？
+如果某支股票的殖利率接近或超過 5%，代表其殖利率表現相當優異，值得持續關注。然而，若該股票的殖利率低於銀行定存，則不太建議長期投資該股票。</p>
+</li>
+<li>
+<p>只看殖利率，沒有考慮其他因素可能的影響</p>
+<ol>
+<li>「現金股利 ÷ 股價」這樣簡易的計算方式著重於現金利息，並未充分考慮股票股利、股價漲跌等其他因素，很可能會陷入僅賺取股利但股價損失的困境。</li>
+<li>當股價波動，股票價格可能會因市場情緒、公司業績、宏觀經濟等因素而波動。如果股價下跌，即使殖利率高，投資者仍然可能面臨損失。</li>
+<li>股利政策變化，公司的股利政策可能隨著時間和市場情況而變化。高殖利率可能是暫時的，如果公司決定減少或暫停發放股利，投資者的股利收入將會受到影響。</li>
+<li>股息再投資效應，有些投資者可能會選擇將股利再投資到相同的股票或其他投資中，以實現複利效應。這樣一來，單純的股利收入可能不足以完整評估投資回報。</li>
+</ol>
+</li>
+</ul>
+
+    </article>
+
+    
+
+
+  
+<script type="text/javascript">
+  (function() {
+    const themeToggle = document.querySelector('.darkmode-toggle input');
+    const light = 'light';
+    const dark = 'dark';
+    let isDark = localStorage.theme === dark || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches);
+    let theme = isDark ? dark : light;
+
+    const s = document.createElement('script');
+    s.type = 'text/javascript';
+    const dataset = {
+        repo: 'SweiiHuang\/sweiihuang.github.io',
+        repoId: 'R_kgDOLNBUkg',
+        category: 'Announcements',
+        categoryId: 'DIC_kwDOLNBUks4Cc89f',
+        mapping: 'pathname',
+        reactionsEnabled: '1',
+        emitMetadata: '0',
+        theme: theme,
+        lang: 'en',
+    };
+    s.src = 'https://giscus.app/client.js';
+    s.crossorigin = 'anonymous';
+    s.async = true;
+    Object.entries(dataset).forEach(function(a) {
+        return s.dataset[a[0]] = a[1];
+    });
+
+    const curScriptElement = document.currentScript;
+    curScriptElement.parentNode.insertBefore(s, curScriptElement);
+
+    function sendMessage(message) {
+      const iframe = document.querySelector('iframe.giscus-frame');
+      
+      if (!iframe) return;
+      iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+    }
+
+    themeToggle.addEventListener('change', function () {
+      if (this.checked) {
+        theme = dark;
+      } else {
+        theme = light;
+      }
+      sendMessage({
+        setConfig: {
+          theme: theme,
+        }
+      });
+    });
+  })();
+</script>
+  
+
+
+  </div>
+</div>
+
+  </main>
+  <footer class="flex flex-none justify-center">
+    <section class="flex flex-col md:flex-row mx-2 md:mx-0 gap-2 md:gap-0 justify-between w-full max-w-4xl lg:max-w-5xl py-6 text-slate-500 dark:text-slate-300">
+  <div class="flex flex-row">
+    
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    <a href="https://github.com/SweiiHuang" target="_blank" title="Github" class="flex flex-row mr-2">
+      <span class="hidden">Github</span>
+      <i class="h-6 w-6 flex-none"> <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+   <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5"></path>
+</svg>
+ </i>
+    </a>
+  
+  
+  
+    <a href="https://medium.com/@lagom247" target="_blank" title="Medium" class="flex flex-row mr-2">
+      <span class="hidden">Medium</span>
+      <i class="h-6 w-6 flex-none"> <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-medium" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 4m0 2a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-12a2 2 0 0 1 -2 -2z" /><path d="M8 9h1l3 3l3 -3h1" /><path d="M8 15l2 0" /><path d="M14 15l2 0" /><path d="M9 9l0 6" /><path d="M15 9l0 6" /></svg> </i>
+    </a>
+  
+  
+
+
+  </div>
+  <div class="grow"></div>
+  <div class="flex flex-row">
+    <i class="h-6 w-6 flex-none"><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+   <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+   <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0"></path>
+   <path d="M14 9.75a3.016 3.016 0 0 0 -4.163 .173a2.993 2.993 0 0 0 0 4.154a3.016 3.016 0 0 0 4.163 .173"></path>
+</svg>
+</i> 2024 SW
+    
+  </div>
+  
+  <div class="flex flex-row">
+    <span class="ml-0 pl-0 md:ml-2 md:pl-2 border-l-0 md:border-l border-slate-300 dark:border-slate-400">
+      Powered by <a href="https://gohugo.io" target="_blank" rel="noopener" class="underline">Hugo</a> <span class="text-red-600">&hearts;</span> <a href="https://github.com/tomowang/hugo-theme-tailwind" target="_blank" rel="noopener" class="underline">Tailwind</a>
+    </span>
+  </div>
+  
+</section>
+
+  </footer>
+  <script src="/main.min.c6372b6836971865bd94bfde974748aca8415824a2facab6ccd66a87384bfacb.js"></script>
+
+
+
+
+</body>
+</html>

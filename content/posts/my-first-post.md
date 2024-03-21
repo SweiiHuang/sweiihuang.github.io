@@ -9,7 +9,7 @@ tags = [
     "github page",
     "hugo"]
 series = ["Hugo Guide"]
-categories = ["流程紀錄"]
+categories = ["Dev流程紀錄"]
 +++
 
 自從閱讀了**卡片盒筆記法** & **打造第二大腦**，默默開始將筆記由 Notion 遷移至 Obsidian，也越來越習慣使用 Markdown 來寫筆記。

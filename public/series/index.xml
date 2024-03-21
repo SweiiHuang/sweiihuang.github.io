@@ -7,8 +7,22 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>SW</copyright>
-    <lastBuildDate>Mon, 05 Feb 2024 11:28:56 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 20 Mar 2024 20:24:16 +0800</lastBuildDate>
     <atom:link href="https://sweiihuang.github.io/series/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>個人知識管理PKM</title>
+      <link>https://sweiihuang.github.io/series/%E5%80%8B%E4%BA%BA%E7%9F%A5%E8%AD%98%E7%AE%A1%E7%90%86pkm/</link>
+      <pubDate>Wed, 20 Mar 2024 20:24:16 +0800</pubDate>
+      <guid>https://sweiihuang.github.io/series/%E5%80%8B%E4%BA%BA%E7%9F%A5%E8%AD%98%E7%AE%A1%E7%90%86pkm/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>ETF</title>
+      <link>https://sweiihuang.github.io/series/etf/</link>
+      <pubDate>Mon, 19 Feb 2024 20:56:23 +0800</pubDate>
+      <guid>https://sweiihuang.github.io/series/etf/</guid>
+      <description></description>
+    </item>
     <item>
       <title>MongoDB</title>
       <link>https://sweiihuang.github.io/series/mongodb/</link>

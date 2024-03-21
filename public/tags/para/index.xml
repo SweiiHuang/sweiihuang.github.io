@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>PARA on SW Code Journal</title>
+    <link>https://sweiihuang.github.io/tags/para/</link>
+    <description>Recent content in PARA on SW Code Journal</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>SW</copyright>
+    <lastBuildDate>Wed, 20 Mar 2024 20:24:16 +0800</lastBuildDate>
+    <atom:link href="https://sweiihuang.github.io/tags/para/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[歷程紀錄] 建立個人知識管理系統</title>
+      <link>https://sweiihuang.github.io/posts/io-plan-01/</link>
+      <pubDate>Wed, 20 Mar 2024 20:24:16 +0800</pubDate>
+      <guid>https://sweiihuang.github.io/posts/io-plan-01/</guid>
+      <description>前情提要 在轉換領域的過程中，進行大量的學習，不斷吸收，整理資訊，為了掌握知識而勤於做筆記。&#xA;一開始，只是一股腦地將筆記寫在 Notion。逐漸意識到僅僅在 Notion 上撰寫並不足夠，隨著時間的推移，筆記變得越來越雜亂無章，常陷於找不到有用內容的窘境。(Notion 的搜尋功能有點那個&amp;hellip;)&#xA;如果不能把知識封包給未來的自己，那我花時間做筆記又有什麼意義呢？&#xA;開始對個人知識管理產生興趣，嘗試打理一個屬於自己的流程&amp;amp;筆記系統。讓這個系統不僅能夠累積和歸納我的筆記，還能夠讓我輕鬆地管理和查找所需的資訊，並透過寫 Blog 練習統整與輸出。&#xA;參考資料 卡片盒筆記法(提供了一個分階段筆記的方向，實際使用一陣子，只以靈感/文獻/永久，三個資料夾來分類四散的資訊來源，還是過於混亂) 打造第二大腦(書中提到獲取資訊流程：CODE 跟 組織資訊系統：PARA Method 大大的幫助了我，在數位筆記＆檔案資料夾，使用相同的系統分類儲存，找資料變容易了) 諸多 YT 影片 使用的工具 Apple Notes(使用捷徑，在手機背面敲 2 下，就可以呼喚 Notes，隨時記錄有共鳴的內容) Notion (保留過去的筆記，不浪費時間重新整理，需要時再提煉內容至 Obsidian) Obsidian(目前主力筆記軟體，使用 PARA method 分類內容，透過 iCloud 同步，所有裝置皆可使用) 從擴散獲取知識(Input)到聚合輸出(Output)的步驟：CODE 獲取(Capture) 篩選資訊的一些標準 獲取資訊第一準則：是否對我有所啟發，獲取能觸發共鳴的資訊 資訊日後是否能派上用場？ 與個人休戚相關的資訊是最彌足珍貴的資訊，這包括你自己的想法、反思、記憶，以及引人追憶的事物。 是否令你意想不到？衡量資訊有沒有改變思維的潛能，人類有種自然的傾向，會尋找證據來確認自己已經相信的事情。這是一個被充分研究過的現象，學者們稱它為「確認偏誤」（或稱「佐證偏差」(confirmation bias)），當知識與既有的觀點相互衝突，而且使大腦活躍了起來。那麼理當把它保存下來。 - 初遇一種想法就馬上急著決定它的意義，實在是最糟的時機。你理當暫且置之不論，先讓自己客觀一些 - 慢慢吸收新資訊，並把它整合進思維裡，如此即可擺脫當下各種迫切需求的束縛。 每當我讀取先前儲存以備日後閱讀的資訊時常會驚嘆，許多當下似乎很重要的事其實根本微不足道。 - 獲取資訊絕非愈多愈好。要專注於你的親身經歷，聚焦於細節，充分品味人生的每個時刻。 組織(Organize) 有條有理才有利行動! PARA 運作方式：使你的心智(和筆記)為行動做好準備&#xA;組織資訊的生產系統：PARA PARA 組構資訊的方法是以可操作性為基礎，而非資訊本身的類型，並且以專案作為數位檔案的主要組織單位(unit) 依據可操作性來組織資訊，有助於破除我們耽擱和延遲事情的傾向。&#xA;將前一步驟篩選而來的資訊，依照劃分主題和副主題的層級結構來組建筆記 這筆資訊對哪個專案最有用處？依據實用性來獲取及儲存資訊 依據感興趣的個別主題建立不同的資料夾 目前的數位筆記結構(簡略) 專案(Projects) 職涯或人生進行的短期任務 個人 閱讀心得 年度目標 工作 Side Project 等 領域(Areas) 想與時推進，長期掌理的責任範圍 程式語言 後端技能 資料庫 概念比較 資源(Resources) 未來有用途的或興趣 旅行 咖啡 投資 開車 語言學習 室內設計 未分類的線上課程 檔案庫(Archives)備而不用，暫時冷藏保存的事項 各式快捷鍵筆記 把獲取和組織資訊分成兩個截然不同的步驟格外重要：一是決定當下要「保存什麼有共鳴的知識」，另一則是著眼於長期需求敲定要管理哪些資訊</description>
+    </item>
+  </channel>
+</rss>
