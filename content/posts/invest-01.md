@@ -1,13 +1,14 @@
 +++
 author = "SW"
-title = '[投資工具] 01 - What is ETF ?'
-date = 2024-02-19T20:56:23+08:00
+title = '[投資入門] ETF是什麼？'
+date = 2024-03-04T20:56:23+08:00
 description = 'ETF = 追蹤某個指數 像 股票 一樣買賣的 基金'
 tags = ["ETF","Invest",]
 series = ["ETF"]
 categories = ["投資小白筆記"]
-
 +++
+
+00940 之亂，為了跟媽媽說明 ETF，翻出以前的筆記複習，重新整理紀錄一下。
 
 ## ETF / 股票 / 基金 的差別
 
